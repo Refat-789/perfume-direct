@@ -1,0 +1,293 @@
+{% assign collection_filter_ajax = settings.ajax %}{% if collection_filter_ajax %}{% assign collection_filter_ajax = 1 %}{% endif %}
+{% assign collection_left_sidebar = settings.collection_left_sidebar %}{% if collection_left_sidebar %}{% assign collection_left_sidebar = 1 %}{% endif %}
+{% if collection.image and settings.collection_image_enable %}
+<div class="page-title-collection-image">
+  <div class="holder mt-0 {{ settings.collection_image_width }}">
+    <div class="container">
+      <div class="collection-bg">
+        <div class="collection-bg-image" style="{% unless section.collection_image_height_d == "" %}height: {{ settings.collection_image_height_d | floor }}px;{% endunless %} background-image: url('{{ collection.image | img_url: 'master' }}');background-repeat: {{ settings.collection_image_bg_repeat }};background-size: {% if settings.collection_image_bg_att == 'fixed' %}auto auto{% else %}{{ settings.collection_image_bg_size }}{% endif %};background-attachment: {{ settings.collection_image_bg_att }}; background-position: {{ settings.collection_image_bg_posX }} {{ settings.collection_image_bg_posY }};">
+          <div class="collection-bg-darkness" style="opacity: 0.{{ settings.collection_image_bg_dark }};"></div>
+          <div class="page-title">
+            <div class="title">
+              <h1 {% if settings.collection_title_size == "h-lg" %}class="h-lg"{% endif %} {% if settings.collection_title_color %}style="color: {{ settings.collection_title_color }};"{% endif %}>{{ collection.title }}</h1>
+              <span class="collection-title-line" {% if settings.collection_title_color %}style="background-color: {{ settings.collection_title_color }};"{% endif %}></span>
+            </div>
+          </div>
+          {% unless section.collection_image_height_m == "" %}
+          <STYLE scoped>
+            @media (max-width: 767px) {
+              .collection-bg-image {
+                height: {{ settings.collection_image_height_m | floor }}px !important;
+              }
+            }
+          </STYLE>
+          {% endunless %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}
+<div class="container">
+  {% unless collection.image and settings.collection_image_enable %}
+    <div class="page-title-collection-image">
+      <div class="page-title text-center d-none d-lg-block">
+        <div class="title">
+          <h1>{{ collection.title }}</h1>
+        </div>
+      </div>
+    </div>
+  {% endunless %}
+  <div class="row">
+    {% if settings.collection_left_sidebar %}
+    <div class="col-lg-3 fixed-col aside {% if  settings.collection_fixed_sidebar %}aside-fixed{% endif %} {% unless collection_filter_ajax == 1 %}no-ajax-filter{% endunless %} js-filter-col">
+      {% section 'collection-sidebar' %}
+    </div>
+    {% endif %}
+    <div class="col-lg aside">
+      <div class="prd-grid-wrap">
+        {% section 'collection-section' %}
+      </div>
+    </div>
+  </div>
+  <div class="ymax"></div>
+</div>
+
+
+
+<div id="shopify-section-collection-banner-2" class="shopify-sections index-sections collection-banner-2">
+<div class="holder fullboxed py-3 py-md-7 holder-bg-08" style="background:url({{ 'pf-pattern.svg' | asset_url }}); background-color: #e9e4df;">
+	<div class="container">
+		<div class="bnr bnr-discount bnr-discount--left">
+			<div class="row">
+				<div class="col-md">
+					<div class="bnr-discount-caption">
+						<div class="bnr-discount-text-wrap" style="background-color: #e4d3d1">
+                          <div class="bnr-text1"><h2>{{ collection.title }}</h2></div>
+							<div class="bnr-text2">{{ collection.description }}</div>
+						</div>
+					</div>
+				</div>
+				
+              {% comment %}
+              
+              <div class="col-md bnr-discount-image">
+
+
+<img class="blur-up  w-100 lazyautosizes lazyloaded" data-widths="[720, 900, 1200, 1800]" data-aspectratio="1.3333333333333333" data-sizes="auto" alt="Lorem Ipsum" style="" data-srcset="//cdn.shopify.com/s/files/1/0429/5219/6253/files/perfume_direct-240_720x.png?v=1595208257 720w, //cdn.shopify.com/s/files/1/0429/5219/6253/files/perfume_direct-240_900x.png?v=1595208257 900w, //cdn.shopify.com/s/files/1/0429/5219/6253/files/perfume_direct-240_1200x.png?v=1595208257 1200w, //cdn.shopify.com/s/files/1/0429/5219/6253/files/perfume_direct-240_1800x.png?v=1595208257 1800w" sizes="570px" srcset="//cdn.shopify.com/s/files/1/0429/5219/6253/files/perfume_direct-240_720x.png?v=1595208257 720w, //cdn.shopify.com/s/files/1/0429/5219/6253/files/perfume_direct-240_900x.png?v=1595208257 900w, //cdn.shopify.com/s/files/1/0429/5219/6253/files/perfume_direct-240_1200x.png?v=1595208257 1200w, //cdn.shopify.com/s/files/1/0429/5219/6253/files/perfume_direct-240_1800x.png?v=1595208257 1800w"></div>
+			</div>
+		</div>
+		<div class="bnr bnr-discount bnr-discount--right">
+			<div class="row">
+				<div class="col-md">
+					<div class="bnr-discount-caption">
+						<div class="bnr-discount-text-wrap" style="background-color: #f7fcff">
+							<div class="bnr-text1"></div>
+							<div class="bnr-text2"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md bnr-discount-image">
+
+
+<div class="placeholder-svg-aspect-ratio">
+
+
+
+    <div class="placeholder-frame" style="padding-top: 82.88288288288288%">
+
+            <span>555x460</span>
+
+    </div>
+    <svg class="placeholder-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 525.5 525.5"><path d="M324.5 212.7H203c-1.6 0-2.8 1.3-2.8 2.8V308c0 1.6 1.3 2.8 2.8 2.8h121.6c1.6 0 2.8-1.3 2.8-2.8v-92.5c0-1.6-1.3-2.8-2.9-2.8zm1.1 95.3c0 .6-.5 1.1-1.1 1.1H203c-.6 0-1.1-.5-1.1-1.1v-92.5c0-.6.5-1.1 1.1-1.1h121.6c.6 0 1.1.5 1.1 1.1V308z"></path><path d="M210.4 299.5H240v.1s.1 0 .2-.1h75.2v-76.2h-105v76.2zm1.8-7.2l20-20c1.6-1.6 3.8-2.5 6.1-2.5s4.5.9 6.1 2.5l1.5 1.5 16.8 16.8c-12.9 3.3-20.7 6.3-22.8 7.2h-27.7v-5.5zm101.5-10.1c-20.1 1.7-36.7 4.8-49.1 7.9l-16.9-16.9 26.3-26.3c1.6-1.6 3.8-2.5 6.1-2.5s4.5.9 6.1 2.5l27.5 27.5v7.8zm-68.9 15.5c9.7-3.5 33.9-10.9 68.9-13.8v13.8h-68.9zm68.9-72.7v46.8l-26.2-26.2c-1.9-1.9-4.5-3-7.3-3s-5.4 1.1-7.3 3l-26.3 26.3-.9-.9c-1.9-1.9-4.5-3-7.3-3s-5.4 1.1-7.3 3l-18.8 18.8V225h101.4z"></path><path d="M232.8 254c4.6 0 8.3-3.7 8.3-8.3s-3.7-8.3-8.3-8.3-8.3 3.7-8.3 8.3 3.7 8.3 8.3 8.3zm0-14.9c3.6 0 6.6 2.9 6.6 6.6s-2.9 6.6-6.6 6.6-6.6-2.9-6.6-6.6 3-6.6 6.6-6.6z"></path></svg>
+</div></div>
+			</div>
+		</div>
+      {% endcomment %}
+	</div>
+</div>
+
+</div>
+
+
+
+
+
+<script>
+    function updateQueryParams(){
+        if (location.search.length) {
+            for (var aKeyValue, i = 0, aCouples = location.search.substr(1).split('&'); i < aCouples.length; i++) {
+                aKeyValue = aCouples[i].split('=');
+                if (aKeyValue.length > 1) {
+                    Shopify.queryParams[decodeURIComponent(aKeyValue[0])] = decodeURIComponent(aKeyValue[1]);
+                }
+            }
+        }
+    }
+    function updateURLParameter(url, param, paramVal){
+        var newAdditionalURL = "";
+        var tempArray = url.split("?");
+        var baseURL = tempArray[0];
+        var additionalURL = tempArray[1];
+        var temp = "";
+        if (additionalURL) {
+            tempArray = additionalURL.split("&");
+            for (i=0; i<tempArray.length; i++){
+                if(tempArray[i].split('=')[0] != param){
+                    newAdditionalURL += temp + tempArray[i];
+                    temp = "&";
+                }
+            }
+        }
+        var rows_txt = temp + "" + param + "=" + paramVal;
+        return baseURL + "?" + newAdditionalURL + rows_txt;
+    }
+    function getUrlLastTag(url)
+    {
+        last_tag=0;
+        url_array=url.split('+');
+        last_tag=url_array[url_array.length-1].split('/')[0].split('?')[0];
+        if(!last_tag){
+            last_tag=url.split('collections/')[1];
+            if(last_tag.split('/').length > 1){
+                last_tag=last_tag.split('/')[1].split('?')[0];
+            } else{
+                last_tag = 0
+            }
+        }
+        return last_tag;
+    }
+    function postAjaxJsInit(url,name="",val=""){
+        window.history.pushState('', '', url);
+        updateQueryParams();
+        $.get(url, function(data) {
+            if(getUrlLastTag(url))
+            {
+                group=tag_group[getUrlLastTag(url)];
+            }else{
+                group='colors';
+            }
+            listing=$('.product-listing', data).html().split('<div class="product-item ').join('<div style="opacity:0" class="product-item ');
+            {% if settings.collection_left_sidebar %}
+            filters=$('.fixed-col_content', data).html().split('style="display: block;"').join('');
+            {% endif %}
+            $(".product-listing").html(listing);
+            {% if settings.collection_left_sidebar %}$(".fixed-col_content").html(filters);{% endif %}
+            $('.breadcrumbs').html($('.breadcrumbs', data).html());
+            $('.page-title-collection-image').html($('.page-title-collection-image', data).html());
+            $('h1.category-title').html($('h1.category-title', data).html());
+            $('.sort-by-holder').html($('.sort-by-holder', data).html());
+            $('.toolbar-selected').html($('.toolbar-selected', data).html());
+            showProduct(1,'fadeInUp','.product-item');
+            $('.empty-category-button.all-products').addClass('hidden');
+            $('.empty-category-button.clear-all').removeClass('hidden');
+            countDownIni('.countdown');
+            currencyUpdate();
+            updateProductCardSelectbox();
+            show_more=$('.show_more_wrapper', data).html();
+            pagination=$('.pagination', data).html();
+            if((typeof show_more === 'undefined'))
+            {
+                $('.show_more_wrapper').empty();
+            } else{
+                $('.show_more_wrapper').html(show_more);
+            }
+
+            if((typeof pagination === 'undefined'))
+            {
+                $('.pagination').empty();
+            } else{
+                $('.pagination').html(pagination);
+            }
+            GOODWIN.catalog.postAjaxCatalog();
+            $('.prd-grid-wrap').removeClass('is-loading');
+        });
+    }
+    $(function(){
+        Shopify.queryParams = {};
+        updateQueryParams();
+        {% if collection_filter_ajax == 1 %}
+        $(document).on('click','.fixed-col_content li a, a.clear-filters, .clear-all a',function(e){
+            url=$(this).attr('href').replace('#','');
+            $('.prd-grid-wrap').addClass('is-loading');
+            postAjaxJsInit(url);
+            e.preventDefault();
+			setTimeout(function () {
+				var $elem = $('.page-content'),
+                    wHeight = $(window).height() < $elem.height() * 2 ? 0 : $(window).height() - $elem.height() * 2,
+					offsetTop = $elem.offset().top - wHeight;
+				$('html,body').animate({
+					scrollTop: offsetTop
+				}, 250);
+			}, 250)
+        })
+        {% endif %}
+    })
+    {% if collection_filter_ajax == 1 %}
+    $(function(){
+        if($('body').hasClass('ie'))
+        {
+            $('.sort-by-js')
+                    .bind('change', function() {
+                                Shopify.queryParams.sort_by = jQuery(this).val();
+                                location.search = jQuery.param(Shopify.queryParams);
+                            }
+                    );
+            $('select[name=view]')
+                    .bind('change', function() {
+                                Shopify.queryParams.view = jQuery(this).val();
+                                location.search = jQuery.param(Shopify.queryParams);
+                            }
+                    );
+        }else
+        {
+            $(document).on('change','.filter-row select,.aside-filter-row select',function(e){
+                name=$(this).attr('name');
+                val=$(this).val();
+                url=updateURLParameter(window.location.href.replace('#','').replace('{{ shop.url }}',''), name, val);
+                $('.prd-grid-wrap').addClass('is-loading');
+                postAjaxJsInit(url,name,val);
+                e.preventDefault();
+            })
+        }
+    })
+
+
+    {% else %}
+    $(function(){
+        $('.sort-by-js')
+                .on('change', function() {
+                            Shopify.queryParams.sort_by = jQuery(this).val();
+                            location.search = jQuery.param(Shopify.queryParams);
+                        }
+                );
+
+        $('select[name=view]')
+                .on('change', function() {
+                            Shopify.queryParams.view = jQuery(this).val();
+                            location.search = jQuery.param(Shopify.queryParams);
+                        }
+                );
+    })
+    {% endif %}
+
+    $(document).on('click','.show_more',function(e){
+        url=$(this).attr('href');
+        window.history.pushState('', '', url);
+        $('.prd-grid-wrap').addClass('is-loading');
+        $.get(url, function(data) {
+            listing=$('.product-listing', data).html().split('<div class="product-item ').join('<div style="opacity:0" class="product-item ');
+            if(listing)$('.product-listing').append(listing);
+            show_more=$('.show_more_wrapper', data).html();
+            pagination=$('.pagination', data).html();
+            if(show_more)$('.show_more_wrapper').html(show_more);
+            if(pagination)$('.pagination').html(pagination);
+            showProduct(1,'fadeInUp','.product-item');
+            GOODWIN.catalog.postAjaxCatalog();
+            countDownIni('.countdown');
+            updateProductCardSelectbox();
+            $('.prd-grid-wrap').removeClass('is-loading');
+        })
+        e.preventDefault();
+    })
+</script>

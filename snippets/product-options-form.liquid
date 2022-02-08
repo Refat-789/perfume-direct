@@ -1,0 +1,150 @@
+<div class="product-options topline id_{{ product.id }} {{ product_options }} {% if product.variants.size == 1 %}product-no-options no-border{% endif %}">
+
+  {% unless product.has_only_default_variant %}
+        {% if section.settings.options_style == 'dropdowns' %}
+            <div class="prd-block_options prd-block_options--select">
+                {% for option in product.options_with_values %}
+                    <div class="prd-block_options-item">
+                        <div class="option-label" for="SingleOptionSelector-{{ forloop.index0 }}">{{ option.name }}</div>
+                        <div class="form-group select-wrapper select-wrapper--sm">
+                            <select class="form-control form-control--sm single-option-selector-{{ section.id }}" id="SingleOptionSelector-{{ forloop.index0 }}" data-index="option{{ forloop.index }}">
+                                {% for value in option.values %}
+                                    <option value="{{ value | escape }}"{% if option.selected_value == value %} selected="selected"{% endif %}>{{ value }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <div class="prd-block_options">
+                {% for option in product.options_with_values %}
+                    <div class="prd-size swatches">
+                        <div class="option-label">{{ option.name }}</div>
+                        <select class="form-control hidden single-option-selector-{{ section.id }}" id="SingleOptionSelector-{{ forloop.index0 }}" data-index="option{{ forloop.index }}">
+                            {% for value in option.values %}
+                                <option value="{{ value | escape }}"{% if option.selected_value == value %} selected="selected"{% endif %}>{{ value }}</option>
+                                
+                            {% endfor %}
+                        </select>
+
+                        {%- if section.settings.color_options_name == option.name and section.settings.color_swatches_style != 'default' -%}
+                            {%- case section.settings.color_swatches_style -%}
+                            {%- when 'variants' -%}
+                            <ul class="color-list color-variants js-size-list" data-select-id="SingleOptionSelector-{{ forloop.index0 }}">
+                                {% for value in option.values %}
+                                    <li {% if option.selected_value == value %} class="active"{% endif %}>
+                                        <a href="#" data-value="{{ value | escape }}" data-toggle="tooltip" data-placement="top" title="{{ value | escape }}"><span class="value" style="min-width: {{ section.settings.swatches_width }}px;">{% render 'getFirstVariantImageByColorName' product:product, value:value, option:option %}</span></a>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                            {%- when 'colorpics' -%}
+                            <ul class="color-list js-size-list" data-select-id="SingleOptionSelector-{{ forloop.index0 }}">
+                                {% for value in option.values %}
+                                    <li {% if option.selected_value == value %} class="active"{% endif %}>
+                                        <a href="#" data-value="{{ value | escape }}" data-toggle="tooltip" data-placement="top" title="{{ value | escape }}"><span class="value" style="width: {{ section.settings.swatches_width }}px;"><img data-src="{{ value | handle | prepend:'color-' | append: '.png' | file_url | downcase }}" class="lazyload" alt=""></span></a>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                            {%- endcase -%}
+                        {%- else -%}
+                      
+                            <ul class="size-list js-size-list fixsizeformobile defaultul" data-select-id="SingleOptionSelector-{{ forloop.index0 }}">
+                              
+								{% for value in option.values %}
+                                
+                                    {% assign variant = product.selected_or_first_available_variant %}
+                                    {% capture price %}{{ product.selected_or_first_available_variant.price | money }}{% endcapture %}
+                                    <meta itemprop="priceCurrency" content="{{ shop.currency }}">
+                                    <meta itemprop="price" content="{{ product.selected_or_first_available_variant.price | divided_by: 100.00 }}">
+									<li id = "fixlistmobile" {% if option.selected_value == value %} class="active" selected="selected"{% endif %} value="{{ forloop.index0 }}">
+                                        <a href="#" data-value="{{ value | escape }}">
+                                            <span class="prd-block_price value extraweight" data-price>
+                                                {{ value }} <br>
+												{% for myvariant in product.variants %}
+
+													{% if value == myvariant.title %}
+														{{ myvariant.price | money }} 
+													{% endif %}
+												{% endfor %}
+												
+                                            </span>
+                                        </a>
+                                    </li>
+								{% endfor %}
+                            </ul>
+							
+                      		{% assign instructions = product.metafields.badge %}
+
+                            {% assign key = 'badge' %}
+
+                            <input type="hidden" value='{{ instructions.badge }}' name="badge" id="badge" />
+                            <!-- NEW Price Boxes -->
+                            {% comment %} <ul class="size-list js-size-list fixsizeformobile" data-select-id="SingleOptionSelector-{{ forloop.index0 }}">
+                                {% for variant in product.variants %}
+                                    {% assign variant = product.selected_or_first_available_variant %}
+                                    {% capture price %}{{ product.selected_or_first_available_variant.price | money }}{% endcapture %}
+                                    <meta itemprop="priceCurrency" content="{{ shop.currency }}">
+                                    <meta itemprop="price" content="{{ product.selected_or_first_available_variant.price | divided_by: 100.00 }}">
+
+                                    <li id = "fixlistmobile" {% if variant.selected == value %} class="active" selected="selected"{% endif %}>
+                                        <a href="#" data-value="{{ value | escape }}">
+                                            <span class="prd-block_price value extraweight" data-price>
+                                                <span class="variant__title">{{ variant.title }}</span> <br>
+                                                {{ variant.price | money }}
+                                            </span>
+                                        </a>
+                                    </li>
+                                {% endfor %}
+                            </ul> {% endcomment %}
+
+                            <!-- Test code from PD Live -->
+                            {% comment %} <ul>
+                                {% for variant in product.variants %}
+                                    <li var_avilable={{ variant.available }}>
+                                    <input type="radio" name="variant" value="{{ variant.title }}" id="{{ variant.id }}" data-id="{{ variant.id }}">
+                                    <label for="{{ variant.id }}">
+                                        <span class="variant__title">{{ variant.title }}</span>
+                                        {{ variant.price | money }}
+                                        <span class="rrp_price">{{ rrp_text }}{{ variant.compare_at_price | money }}</span>
+                                        <span class="save__value">{{ save_text }} {{ variant.compare_at_price | minus: variant.price | money }}</span>
+                                    </label>
+                                </li>
+                                {% endfor %}
+                            </ul> {% endcomment %}
+
+
+                        {%- endif -%}
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endunless %}
+    <select name="id" id="ProductSelect-{{ section.id }}" class="d-none no-js">
+        {% for variant in product.variants %}
+            {% assign variant_on_sale = false %}
+            {% if variant.compare_at_price > variant.price %}
+     			
+                {% assign variant_on_sale = true %}
+            {% endif %}
+            {% if variant.available %}
+                <option class="custom-opt{{ forloop.index0 }}" {% if variant == product.selected_or_first_available_variant %} selected="selected" {% endif %} value="{{ variant.id }}"> {{ variant.title }} </option>
+            {% else %}
+                <option disabled="disabled">{{ variant.title }} - {{ 'products.product.sold_out' | t }}</option>
+
+      {% endif %}
+        {% endfor %}
+    </select>
+    {% if product.available %}
+        <div class="prd-block_qty">
+            <span class="option-label">{{ 'general.theme.quantity' | t }}</span>
+            <div class="qty qty-changer">
+                <fieldset>
+                    <input type="button" value="&#8210;" class="decrease">
+                    <input type="text" class="qty-input" name="quantity" value="1" data-min="1" {% if product.selected_or_first_available_variant.inventory_management == "shopify" and product.selected_or_first_available_variant.inventory_quantity > 0 and product.selected_or_first_available_variant.inventory_policy == 'deny' %}data-max="{{ product.selected_or_first_available_variant.inventory_quantity }}"{% endif %}>
+                    <input type="button" value="+" class="increase">
+                </fieldset>
+            </div>
+        </div>
+    {% endif %}
+</div>

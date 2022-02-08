@@ -1,0 +1,29 @@
+{%- assign logo = section.settings.logo -%}
+{%- assign logo_mobile = section.settings.logo_mobile -%}
+{% capture logo_alt %}{{ logo.alt | default: shop.name }}{% endcapture %}
+<a href="{{ routes.root_url }}" class="logo">
+    {%- if logo_mobile != blank -%}
+        {%- capture image_size -%}{{ section.settings.logo_max_width | escape }}x{%- endcapture -%}
+        {%- capture image_size_retina -%}{{ section.settings.logo_max_width | times: 2 | escape }}x{%- endcapture -%}
+        <img class="lazyload fade-up d-lg-none"
+             data-src="{{ section.settings.logo_mobile | img_url: image_size }}"
+             data-srcset="{{ section.settings.logo_mobile | img_url: image_size }} 1x, {{ section.settings.logo_mobile | img_url: image_size_retina }} 2x"
+             data-sizes="auto"
+             data-aspectratio="{{ logo_mobile.aspect_ratio }}"
+             alt="{{ logo_alt | escape }}"
+             style="max-width: {{ section.settings.logo_max_width }}px;">
+    {%- endif -%}
+    {%- if logo != blank -%}
+        {%- capture image_size -%}{{ section.settings.logo_max_width | escape }}x{%- endcapture -%}
+        {%- capture image_size_retina -%}{{ section.settings.logo_max_width | times: 2 | escape }}x{%- endcapture -%}
+        <img class="lazyload fade-up {% if logo_mobile != blank %}hidden-mobile{% endif %}"
+             data-src="{{ section.settings.logo | img_url: image_size }}"
+             data-srcset="{{ section.settings.logo | img_url: image_size }} 1x, {{ section.settings.logo | img_url: image_size_retina }} 2x"
+             data-sizes="auto"
+             data-aspectratio="{{ logo.aspect_ratio }}"
+             alt="{{ logo_alt | escape }}"
+             style="max-width: {{ section.settings.logo_max_width }}px;">
+    {%- else -%}
+        {% include 'image-placeholder' size: 'Logo', width: section.settings.logo_max_width, height: '47', nosvg: true %}
+    {%- endif -%}
+</a>

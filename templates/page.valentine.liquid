@@ -1,0 +1,89 @@
+{%section 'slideshow-christmas' %}
+
+{%section 'carousel-for-christmas-page' %}
+
+{%section 'christmas-new-images' %}
+
+{%section 'brands-christmas' %}
+
+{%section 'christmas-blog-section' %}
+
+{%section 'valentine-bottom-section' %}
+<style>
+.big-carousel-item-title{
+    font-size: 120px;
+    font-family: 'Festive';
+    text-transform: capitalize;
+    font-weight: 100;
+}
+h4.big-carousel-item-subtitle {
+    font-size: 20px;
+}
+.big-carousel-item-caption{
+  background-color:transparent;
+}
+.big-carousel-item-image{
+  padding:0;
+}
+.more-link-wrapper .btn.btn-outline {
+    background: 0 0;
+    border: 1px solid #000;
+    color: #000;
+}
+.brand-carousel .slick-track{
+  justify-content:center;
+}
+.prd-grid.slick-initialized[class*=data-to-show] .prd.slick-slide{
+   width:25% !important;
+   margin-right:0;
+   margin-left:0;
+}
+.brand-sl-chris img{
+	width:100%  	
+}
+.brand-sl-chris{
+	list-style:none;
+    padding:0;
+      display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.christmas-item-image img.blur-up.lazyautosizes.lazyloaded{
+  	width:100%;
+}
+.bnslider-text.bnslider-text--sm.text-global.data-ini.animated {
+    margin-top: 0 !important;
+}
+.top-image-of-best-seller {
+  background-image: url({{'best-seller-banner_3x.png' | asset_url  }});
+ height: 34px;
+  background-size: cover;
+  background-repeat:no-repeat;
+}
+/**************Media*****************/
+@media(min-width:768px){
+  .bnslider-text.bnslider-text--md.text-global.data-ini.animated {
+   	display: none;
+ }
+ .christmas-blog-section-g{
+     display: flex;
+    justify-content: space-between;
+    gap: 30px;
+ }
+  .christmas-blog-section-g .post-prw{
+  	width:50%;
+  }
+} 
+@media(max-width:768px){
+  .top-image-of-best-seller{
+  	background-size:contain;
+  }
+  .prd-grid.slick-initialized[class*=data-to-show] .prd.slick-slide{
+	width:50% !important;  	
+  }
+  .bnslider-text.bnslider-text--sm.text-global.data-ini.animated{
+  	font-size:14px !important;
+    font-weight:300 !important;
+  }
+}
+</style>

@@ -1,0 +1,123 @@
+  <div class="holder">
+        <div class="container">
+            <h2 class="h1-style text-center">{{ section.settings.title }}</h2>
+            <div class="row person-row justify-content-center mt-0">
+            {% for block in section.blocks %}
+                {% if block.settings.enable %}
+                <div class="col-6 col-sm-3 col-md-3 mt-md-0">
+                    <div class="person-item">
+                        <div class="person-item-image">
+                            {%- assign _img = block.settings.image -%}
+                            {%- assign _img_size = '620x' -%}
+                            {%- if _img -%}
+                                <img class="lazyload blur-up responsive"
+                                     data-src="{{ _img | img_url: _img_size }}"
+                                     data-srcset="{{ _img | img_url: _img_size }} 1x, {{ _img | img_url: _img_size, scale: 2 }} 2x"
+                                     data-aspectratio="{{ _img.aspect_ratio }}"
+                                     data-sizes="auto"
+                                     alt="{{ block.settings.title }}">
+                            {%- else -%}
+                                    {% include 'image-placeholder-aspect-ratio', width: 400, height: 520 %}
+                            {%- endif -%}
+                        </div>
+                      <div class="vignette-of-image"></div>
+                      <div class="member-details">
+                          <div class="person-item-post text-uppercase ">
+                            {{ block.settings.prof }}
+                        </div>
+                        <div class="seprator"></div>
+                        <div class="person-item-title text-uppercase ">
+                            {{ block.settings.title }}
+                        </div>
+                      
+                      </div>
+                    </div>
+                </div>
+                {% endif %}
+            {% endfor %}
+            </div>
+        </div>
+    </div>
+
+{% schema %}
+{
+"name": "MEET THE TEAM",
+"class": "index-section",
+"settings": [
+{
+"type": "checkbox",
+"id": "enable",
+"label": "Enable",
+"default": true
+},
+{
+"type": "header",
+"content": "General"
+},
+{
+"type": "text",
+"id": "title",
+"label": "Heading",
+"default":"Our Team"
+}
+],
+"blocks":[
+    {
+        "type": "worker",
+        "name": "Member",
+        "settings": [
+            {
+                "type":"checkbox",
+                "id":"enable",
+                "label":"Enable",
+                "default":true
+            },
+            {
+                "type": "image_picker",
+                "id": "image",
+                "label": "Photo",
+                "info": "recommended 400x520px"
+            },
+            {
+                "type": "text",
+                "id": "prof",
+                "label":"Profession",
+                "default":"Director"
+            },
+            {
+                "type": "text",
+                "id": "title",
+                "label":"Name",
+                "default":"John Smith"
+            }
+         ]
+    }
+],
+"presets": [
+{
+"name": "Our Team",
+"category": "About Us",
+"blocks": [
+{
+"type": "worker"
+},
+{
+"type": "worker"
+},
+{
+"type": "worker"
+},
+{
+"type": "worker"
+},
+{
+"type": "worker"
+},
+{
+"type": "worker"
+}
+]
+}
+]
+}
+{% endschema %}

@@ -1,0 +1,197 @@
+{% paginate blog.articles by section.settings.posts_per_page %}
+
+ {% if section.settings.sidebar %}
+            <div class="col-md-3 aside aside--right displaytopmobile" id="sideColumn">
+               {% if settings.blog_tags_yes %}
+  {% if blog.all_tags.size > 0 %}
+    {% comment %} <div class="aside-block-delimiter"></div> {% endcomment %}
+    <div class="aside-block mt-2 blogHeading">
+      {% comment %} <h2 class="text-uppercase">{{ 'general.theme.tags' | t }}</h2> {% endcomment %}
+      
+      <h2 class="accordion text-uppercase catspac">Category</h2>
+      <ul class="tags-list panel">
+        {% for tag in blog.all_tags %}
+          {% if current_tags contains tag %}
+            <li class="active">{{ tag  | link_to_remove_tag: tag  }}</li>
+          {% else %}
+            <li>{{ tag  | link_to_add_tag: tag }}</li>
+          {% endif %}
+        {% endfor %}
+        
+      </ul>
+    </div>
+   {% endif %}
+  {% endif %}
+ </div>
+{% endif %}
+
+<div class="block offset-40">
+    <div class="container">
+        <div class="page-title" style="padding-left:15px;">
+            <div class="title">
+                {% comment %} <h1>{{ blog.title }}</h1> {% endcomment %}
+                {% if current_tags %}
+                    <h4>{{ current_tags | join: " + " }}</h4>
+                {% endif %}
+            </div>
+        </div>      
+        <div class="row">
+            {% if section.settings.sidebar %}{% assign left_col="col-md-9" %}{% else %}{% assign left_col="col-md-12" %}{% endif %}
+            <div class="{{ left_col }} aside" id="centerColumn">
+                <div class="post-grid-3">
+                  	
+                    {% for article in blog.articles %}
+                        {% if paginate.current_offset	== 0 %}
+                        {% if forloop.first == true %}
+                  
+                                  <div class="post-prw-big fixformob noshowdesktop" >
+                              {% else %}
+                                  <div class="post-prw-big fixformob">
+                              {% endif %}
+						{% else %}
+                                  <div class="post-prw-big fixformob">                                    
+                        {% endif %}
+                        
+                            {% if article.image %}
+                            <a href="{{ article.url }}" class="post-img">
+                                {%- assign img_url = article | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+                                {%- assign image_alt = article.title | escape -%}
+                                <img class="lazyload blur-up" data-src="{{ img_url }}" data-widths="[900, 1200, 1800]"
+                                    data-aspectratio="{{ article.aspect_ratio }}" data-sizes="auto" alt="{{ image_alt }}">
+                            </a>
+                            {%- endif -%}
+                            {% comment %} <div class="post-inside">
+                                {% if article.tags.size > 0 %}
+                                <ul class="tags-list post-tags-list">
+                                    {% for tag in article.tags %}
+                                    <li>
+                                        <a href="{{ blog.url }}/tagged/{{ tag | handle }}">{{ tag }}</a>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                                {% endif %}
+                                <h2 class="post-title">
+                                    <a href="{{ article.url }}">{{ article.title }}</a>
+                                </h2>
+                                 {% if article.excerpt contains '<p>' %}
+                                    {% if article.excerpt.size > 0 %}
+                                        {{ article.excerpt | replace:'<p>','<p class="post-teaser">' }}
+                                    {% else %}
+                                        {{ article.content | strip_html | truncatewords: 100 | replace:'<p>','<p class="post-teaser">' }}
+                                    {% endif %}
+                                {% else %}
+                                    <p class="post-teaser">
+                                        {% if article.excerpt.size > 0 %}
+                                        {{ article.excerpt }}
+                                        {% else %}
+                                        {{ article.content | strip_html | truncatewords: 100 }}
+                                        {% endif %}
+                                    </p>
+                                {% endif %} 
+
+                                 <div class="post-bot">
+                                    <div class="post-date">{{ article.published_at | date: format: "month_day_year" }}</div>
+                                    <a href="{{ article.url }}" class="post-link">{{ "blogs.article.read_more" | t }}</a>
+                                    <div class="post-action">
+                                        {% if blog.comments_enabled? %}
+                                        <span><a href="{{ article.url | append:"#comments" }}">{{ article.comments.size }}
+                                                {{ "general.theme.comments" | t }}</a></span>
+                                        {% endif %}
+                                    </div>
+                                </div> 
+
+                            </div> {% endcomment %}          
+                                    
+	                            <h2 class="post-title">
+                                    <a href="{{ article.url }}">{{ article.title }}</a>
+                                </h2>
+                                    
+                                <div class="post-date">
+                                     {{ article.published_at | time_tag: format: 'day' }} {{ article.published_at | time_tag: format: 'month' }}
+                                </div>    
+                                    
+                        </div>
+                {% else %}
+                    <div class="empty-category">
+                        <div class="empty-category-text"><span>{{ 'general.theme.sorry' | t }}</span>,
+                            {{ 'general.theme.no_posts' | t }}</div>
+                        <div class="empty-category-button "><a href="/blogs/{{ blog.handle }}"
+                                class="btn-decor">{{ 'general.theme.clear_all' | t }}</a></div>
+                        <div class="empty-category-icon"><i class="icon-sad-face"></i></div>
+                    </div>
+                {% endfor %}
+                </div>
+            </div>
+            {% if section.settings.sidebar %}
+            <div class="col-md-3 aside aside--right noshowmobile" id="sideColumn">
+                {% include "blog-sidebar" %}
+            </div>
+            {% endif %}
+        </div>
+
+        {% if paginate.pages > 1 %}
+        <div class="text-center">
+            {% include "pagination-custom" %}
+        </div>
+        {% endif %}
+
+    </div>
+</div>
+
+
+
+{% assign sp_paginate_by = paginate.page_size %}{% endpaginate %}
+{% if sp_paginate_by %}{% render 'spurit_po2_collection_template_snippet', paginate_by: sp_paginate_by %}{% endif %}{% schema %}
+{
+"name": "Blog page",
+"settings": [
+{
+"type": "paragraph",
+"content": "[Documentation](http://big-skins.com/goodwin/shopify/manuals/#Blog)"
+},
+{
+"type": "header",
+"content": "Layout"
+},
+{
+"type": "select",
+"label": "Posts per page",
+"id":"posts_per_page",
+"options":[
+{ "value": "1", "label": "1" },
+{ "value": "2", "label": "2" },
+{ "value": "3", "label": "3" },
+{ "value": "4", "label": "4" },
+{ "value": "5", "label": "5" },
+{ "value": "6", "label": "6" },
+{ "value": "7", "label": "7" },
+{ "value": "8", "label": "8" },
+{ "value": "9", "label": "9" },
+{ "value": "10", "label": "10" },
+{ "value": "11", "label": "11" },
+{ "value": "12", "label": "12" },
+{ "value": "13", "label": "13" },
+{ "value": "14", "label": "14" },
+{ "value": "15", "label": "15" },
+{ "value": "16", "label": "16" },
+{ "value": "17", "label": "17" },
+{ "value": "18", "label": "18" },
+{ "value": "19", "label": "19" },
+{ "value": "20", "label": "20" }
+],
+"default":"5"
+},
+
+{
+"type": "checkbox",
+"id": "sidebar",
+"label": "Sidebar",
+"default": true
+},
+{
+"type": "header",
+"content": "General"
+}
+]
+}
+{% endschema %}

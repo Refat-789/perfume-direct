@@ -1,0 +1,92 @@
+<header class="hdr hdr-style-4 {{ header_width }}  {% if section.settings.sticky %}hdr_sticky{% endif %} minicart-icon-style-2 hdr-mobile-style{{ section.settings.style_mobile }}">
+
+    {% include 'topline-desktop' %}
+
+    {% include 'topline' %}
+    {% include 'mobile-navigation' %}
+    {% include 'header-mobile' %}
+    <div class="hdr-desktop hide-mobile hide-1024">
+        <div class="hdr-topline {{ style_topbar }}" {% if section.settings.style_topbar_bg %}style="background-color: {{ section.settings.style_topbar_bg }}"{% endif %}>
+            <div class="container">
+                <div class="row">
+                    <div class="col-auto hdr-topline-left">
+                        {% include 'header-languages-simple' %}
+                    </div>
+                    <div class="col-auto hdr-topline-right">
+                        <div class="links-holder">
+                            {% include 'wishlist-header' onlytext:1 %}
+                            {% include 'header-login-form' onlytext:1 %}
+                            {% include 'currency-picker' onlytext:1, nocaret:1 %}
+                        </div>
+                        {% include 'social-media-links' in_header:1 %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hdr-content hide-mobile">
+            <div class="container">
+                <div class="row">
+                    <div class="col-auto logo-holder">
+                        {% include 'header-logo' %}
+                    </div>
+                    <!--navigation-->
+                    <div class="prev-menu-scroll icon-angle-left prev-menu-js"></div>
+                    <div class="next-menu-scroll icon-angle-right next-menu-js"></div>
+                    <!--//navigation-->
+                    <div class="col-auto hdr-content-right">
+                        {% comment %} <div class="search-holder">
+                            {% include 'header-search' classes:'only-icon' %}
+                        </div> {% endcomment %}
+
+                        {% comment %} <div class="col search-holder nav-holder"> {% endcomment %}
+                        <div class="search-holder mr-2">
+                            {% include 'header-search-style-1' %}
+                        </div>
+
+                        <div class="dropdn only-icon">
+                            <a href="#" class="dropdn-link">
+                                {{ 'UK-Flag.svg' | asset_url | img_tag }}
+                            </a>
+                        </div>
+
+                        <div class="dropdn dropdn_account only-icon">
+                            <a href="/account/login" class="dropdn-link">
+                                <i class="icon icon-person"></i><span>My Account</span>
+                            </a>
+                        </div>
+
+                        <div class="minicart-holder">
+                            {% include 'header-cart' %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+          <div class="row" style="align-items: flex-start">
+            <div id="new-nav-section">
+              {% include 'header-navigation' %}
+            </div>
+
+          </div>
+        </div>
+    </div>
+    {% include 'header-sticky' %}
+</header>
+  <script>
+    $( window ).resize(function() {
+setTimeout(function(){
+var cart_hidden_resize = jQuery(".hdr-content.hide-mobile .minicart.minicart-j").clone();
+$(".hdr-mobile.show-mobile.display-1024 .minicart-holder").html(cart_hidden_resize);
+
+},1500);
+});
+
+    $(window).bind('orientationchange', function(event) {
+setTimeout(function(){
+var cart_hidden_resize =  $(".hdr-content.hide-mobile .minicart.minicart-j").clone();
+ $(".hdr-mobile.show-mobile.display-1024 .minicart-holder").html(cart_hidden_resize);
+location.reload();
+},1500);
+});
+  </script>

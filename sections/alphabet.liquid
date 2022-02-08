@@ -1,0 +1,225 @@
+  <div class="page-width">
+ 
+
+{% for block in section.blocks %}
+		{% if section.blocks.size == 5 and forloop.index < 3 %}
+        {%- assign column_width = 'medium-up--one-half' -%}
+        {%- assign max_height = 530 -%}
+      {% else %}
+        {%- assign column_width = grid_item_width -%}
+      {% endif %}	
+    <a href = '{{block.settings.button_link}}'><li>{{block.settings.button_label}} </li></a>
+
+
+	{% endfor %}
+
+
+
+
+{% schema %}
+{
+  "name": {
+    "da": "Tekstkolonner med billeder",
+    "de": "Textspalten mit Fotos",
+    "en": "Brands with page links",
+    "es": "Columnas de texto con imágenes",
+    "fi": "Tekstisarakkeet kuvilla",
+    "fr": "Colonnes de texte et images",
+    "hi": "इमेज के साथ टेक्स्ट कॉलम",
+    "it": "Colonne di testo con foto",
+    "ja": "画像付きテキスト列",
+    "ko": "이미지 포함 텍스트 열",
+    "nb": "Tekstkolonner med bilder",
+    "nl": "Kolom met afbeeldingen",
+    "pt-BR": "Texto em coluna com imagens",
+    "pt-PT": "Colunas texto c/ imagens",
+    "sv": "Textkolumner med bilder",
+    "th": "คอลัมน์ข้อความพร้อมรูปภาพ",
+    "zh-CN": "带有图片的文本列",
+    "zh-TW": "附圖片的文字欄"
+  },
+  "class": "index-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": {
+        "da": "Overskrift",
+        "de": "Titel",
+        "en": "Heading",
+        "es": "Título",
+        "fi": "Otsake",
+        "fr": "En-tête",
+        "hi": "शीर्षक",
+        "it": "Heading",
+        "ja": "見出し",
+        "ko": "제목",
+        "nb": "Overskrift",
+        "nl": "Kop",
+        "pt-BR": "Título",
+        "pt-PT": "Título",
+        "sv": "Rubrik",
+        "th": "ส่วนหัว",
+        "zh-CN": "标题",
+        "zh-TW": "標題"
+      },
+      "default": {
+        "da": "Tekstkolonner med billeder",
+        "de": "Textspalten mit Fotos",
+        "en": "Brands with page links",
+        "es": "Columnas de texto con imágenes",
+        "fi": "Tekstisarakkeet kuvilla",
+        "fr": "Colonnes de texte et images",
+        "hi": "इमेज के साथ टेक्स्ट कॉलम",
+        "it": "Colonne di testo con foto",
+        "ja": "画像付きテキスト列",
+        "ko": "이미지 포함 텍스트 열",
+        "nb": "Tekstkolonner med bilder",
+        "nl": "Tekstkolommen met afbeeldingen",
+        "pt-BR": "Texto em coluna com imagens",
+        "pt-PT": "Colunas texto c/ imagens",
+        "sv": "Textkolumner med bilder",
+        "th": "คอลัมน์ข้อความพร้อมรูปภาพ",
+        "zh-CN": "带有图片的文本列",
+        "zh-TW": "附圖片的文字欄"
+      }
+        }
+  ],
+  "blocks": [
+    {
+      "type": "text_block",
+      "name": {
+        "da": "Kolonne",
+        "de": "Spalte",
+        "en": "Column",
+        "es": "Columna",
+        "fi": "Sarake",
+        "fr": "Colonne",
+        "hi": "कॉलम",
+        "it": "Colonna",
+        "ja": "列",
+        "ko": "칼럼",
+        "nb": "Kolonne",
+        "nl": "Kolom",
+        "pt-BR": "Coluna",
+        "pt-PT": "Coluna",
+        "sv": "Kolumn",
+        "th": "คอลัมน์",
+        "zh-CN": "列",
+        "zh-TW": "欄"
+      },
+      "settings": [
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": {
+            "da": "Knaptekst",
+            "de": "Button-Name",
+            "en": "Button label",
+            "es": "Etiqueta de botón",
+            "fi": "Tekstipainike",
+            "fr": "Texte du bouton",
+            "hi": "बटन लेबल",
+            "it": "Etichetta pulsante",
+            "ja": "ボタンのラベル",
+            "ko": "버튼 레이블",
+            "nb": "Knappetikett",
+            "nl": "Knoplabel",
+            "pt-BR": "Etiqueta de botão",
+            "pt-PT": "Etiqueta do botão",
+            "sv": "Knappetikett",
+            "th": "ป้ายกำกับปุ่ม",
+            "zh-CN": "按钮标签",
+            "zh-TW": "按鈕標籤"
+          }
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": {
+            "da": "Knaplink",
+            "de": "Button-Link",
+            "en": "Button link",
+            "es": "Enlace de botón",
+            "fi": "Painikelinkki",
+            "fr": "Lien du bouton",
+            "hi": "बटन लिंक",
+            "it": "Link pulsante",
+            "ja": "ボタンのリンク",
+            "ko": "버튼 링크",
+            "nb": "Kobling for knapp",
+            "nl": "Knoplink",
+            "pt-BR": "Link de botão",
+            "pt-PT": "Ligação do botão",
+            "sv": "Knapplänk",
+            "th": "ลิงก์ปุ่ม",
+            "zh-CN": "按钮链接",
+            "zh-TW": "按鈕連結"
+          }
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": {
+        "da": "Tekstkolonner med billeder",
+        "de": "Textspalten mit Fotos",
+        "en": "Text columns with images",
+        "es": "Columnas de texto con imágenes",
+        "fi": "Tekstisarakkeet kuvilla",
+        "fr": "Colonnes de texte et images",
+        "hi": "इमेज के साथ टेक्स्ट कॉलम",
+        "it": "Colonne di testo con foto",
+        "ja": "画像付きテキスト列",
+        "ko": "이미지 포함 텍스트 열",
+        "nb": "Tekstkolonner med bilder",
+        "nl": "Tekstkolommen met afbeeldingen",
+        "pt-BR": "Texto em coluna com imagens",
+        "pt-PT": "Colunas texto c/ imagens",
+        "sv": "Textkolumner med bilder",
+        "th": "คอลัมน์ข้อความพร้อมรูปภาพ",
+        "zh-CN": "带有图片的文本列",
+        "zh-TW": "附圖片的文字欄"
+      },
+      "category": {
+        "da": "Tekst",
+        "de": "Text",
+        "en": "Text",
+        "es": "Texto",
+        "fi": "Teksti",
+        "fr": "Texte",
+        "hi": "टेक्स्ट",
+        "it": "Testo",
+        "ja": "テキスト",
+        "ko": "텍스트",
+        "nb": "Tekst",
+        "nl": "Tekst",
+        "pt-BR": "Texto",
+        "pt-PT": "Texto",
+        "sv": "Text",
+        "th": "ข้อความ",
+        "zh-CN": "文本",
+        "zh-TW": "文字"
+      },
+      "blocks": [
+        {
+          "type": "text_block"
+        },
+        {
+          "type": "text_block"
+        },
+        {
+          "type": "text_block"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

@@ -1,0 +1,71 @@
+<div class="holder  {{ section.settings.outer_margin }}">
+<div class="yotpo-mar-home-rev-car">
+<div class="yotpo yotpo-reviews-carousel"
+
+data-header-customisation-enabled="1"
+
+data-header-customisation-color="#56575f"
+
+data-header-customisation-font-size="18"
+
+data-header-customisation-text="Customer Reviews"
+
+data-header-customisation-alignment="left"
+
+data-background-color="transparent"
+
+data-mode="top_rated"
+
+data-type="site"
+
+data-count="9"
+
+data-show-bottomline="1"
+
+data-autoplay-enabled="1"
+
+data-autoplay-speed="3000"
+
+data-show-navigation="1"> </div>
+</div>
+</div>
+{% schema %}
+  {
+    "name": "Yotpo Review Carousel",
+    "class": "index-section",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "enable",
+        "label": "Enable",
+        "default": true
+      },
+	  {
+		"type": "select",
+		"id": "outer_margin",
+		"label": "Outer top margin",
+		"options":[
+		{"value":"mt-0","label":"None"},
+		{"value":"mt-1","label":"10px"},
+		{"value":"mt-2","label":"20px"},
+		{"value":"mt-3","label":"30px"},
+		{"value":"mt-4","label":"40px"},
+		{"value":"mt-5","label":"50px"},
+		{"value":"mt-6","label":"60px"},
+		{"value":"mt-65","label":"65px"},
+		{"value":"mt-7","label":"70px"},
+		{"value":"mt-8","label":"80px"},
+		{"value":"mt-9","label":"90px"},
+		{"value":"mt-10","label":"100px"}
+],
+"default": "mt-0"
+}
+	],
+    "presets": [
+      {
+        "name": "Yotpo Review Carousel",
+        "category": "Yotpo"
+      }
+    ]
+  }
+{% endschema %}

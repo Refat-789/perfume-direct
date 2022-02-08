@@ -1,0 +1,43 @@
+<div class="holder fullboxed py-4 py-md-10 holder-bg-08 blur-up lazyautosizes lazyloaded" style="background:url({{ 'pf-christmas-pattern.png' | asset_url }}); background-color: #044a41;" data-sizes="auto">
+	<div class="container">
+		<div class="bnr bnr-discount bnr-discount--left">
+			<div class="row">
+				<div class="col-md">
+					<div class="christmas-bottom-center">
+						<div class="christmas-bottom-inner" style="background-color: #003830">
+                          <div class="chri-b-text1"><h1>{{ section.settings.text-title-christmas }} </h1></div>
+							<div class="chri-b-text2">
+                              <p>
+                          	{{ section.settings.text-content-christmas }}      
+                              </p>
+                          </div>
+						</div>
+					</div>
+				</div>
+
+	</div>
+</div>
+  </div></div>
+{% schema %}
+  {
+    "name": "Valentine bottom Section",
+    "settings": [
+{
+	"type": "text",
+	"id": "text-title-christmas",
+	"label":"Title"
+},
+{
+	"type": "textarea",
+	"id": "text-content-christmas",
+	"label":"Content"
+}
+]
+ }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

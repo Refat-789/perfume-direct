@@ -1,0 +1,13 @@
+<div class="placeholder-svg-aspect-ratio hideonweb">
+    {% assign h = height | times: 1 %}
+    {% assign w = width | times: 0.01 %}
+    {% assign top = h | divided_by: w %}
+    <div class="placeholder-frame " style="padding-top: {{ top }};border: 1px solid #e7c4bd;
+    background-color: #e7c4bd;%;">
+        {% if text != blank %}
+            <span style="width:100%; font-size:12px">{{ text }}</span>
+        {% else %}
+            <span {% if toppos != blank %}style="top:{{ toppos }}%"{% endif %}>{{ width }}x{{ height }}</span>
+        {% endif %}
+    </div>
+</div>

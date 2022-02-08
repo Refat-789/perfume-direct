@@ -1,0 +1,357 @@
+{% unless settings.slides_mode %}
+<div class="holder  boxed  {{ section.settings.outer_margin }} {% if section.settings.show_under_header %}show_under_header{% endif %}">
+  <div class="container holder-bg-12" {% if section.settings.bg != blank %}style="background-color: {{ section.settings.bg }}"{% endif %}>
+    <div class="row shop-features-style3">
+      <div class="col-md-4">
+        <a {% if section.settings.caption_1_link != blank %}href="{{ section.settings.caption_1_link }}"{% endif %} class="shop-feature">
+          {% comment %} <div class="shop-feature-icon"><i class="{{ section.settings.caption_1_icon }}"></i></div> {% endcomment %}
+          <div class="shop-feature-icon">
+           <img class="lazyload blur-up js-prd-img"
+                         data-src="{{ 'clearpay-new.png' | asset_img_url: 'x40' }}"
+                         data-srcset="{{ 'clearpay-new.png' | asset_img_url: 'x40' }} 1x, {{ 'clearpay-new.png' | asset_img_url: 'x40' , scale: 2 }} 2x"
+                         data-sizes="auto">
+          </div>
+          <div class="shop-feature-text">
+            <div class="text1">{{ section.settings.caption_1_1_text }}</div>
+            <div class="text2">{{ section.settings.caption_1_2_text }}</div>
+          </div>
+          <span class="shop-feature-bg"></span>
+        </a>
+      </div>
+      <div class="col-md-4">
+        <a {% if section.settings.caption_2_link != blank %}href="{{ section.settings.caption_2_link }}"{% endif %} class="shop-feature">
+          {% comment %} <div class="shop-feature-icon"><i class="{{ section.settings.caption_2_icon }}"></i></div> {% endcomment %}
+          <div class="shop-feature-icon">
+              <img class="lazyload blur-up js-prd-img"
+                         data-src="{{ 'openpay-new.png' | asset_img_url: 'x40' }}"
+                         data-srcset="{{ 'openpay-new.png' | asset_img_url: 'x40' }} 1x, {{ 'openpay-new.png' | asset_img_url: 'x40' , scale: 2 }} 2x"
+                         data-sizes="auto">
+          </div>
+          <div class="shop-feature-text">
+            <div class="text1">{{ section.settings.caption_2_1_text }}</div>
+            <div class="text2">{{ section.settings.caption_2_2_text }}</div>
+          </div>
+          <span class="shop-feature-bg"></span>
+        </a>
+      </div>
+      <div class="col-md-4">
+        <a {% if section.settings.caption_3_link != blank %}href="{{ section.settings.caption_3_link }}"{% endif %} class="shop-feature">
+          {% comment %} <div class="shop-feature-icon"><i class="{{ section.settings.caption_3_icon }}"></i></div> {% endcomment %}
+          <div class="shop-feature-icon">
+              <img class="lazyload blur-up js-prd-img"
+                         data-src="{{ 'laybuy-new2.png' | asset_img_url: 'x40'}}"
+                         data-srcset="{{ 'laybuy-new2.png' | asset_img_url: 'x40'}} 1x, {{ 'laybuy-new2.png' | asset_img_url: 'x40' , scale: 2 }} 2x"
+                         data-sizes="auto">
+          </div>
+          <div class="shop-feature-text">
+            <div class="text1">{{ section.settings.caption_3_1_text }}</div>
+            <div class="text2">{{ section.settings.caption_3_2_text }}</div>
+          </div>
+          <span class="shop-feature-bg"></span>
+        </a>
+      </div> 
+      <div class="col-md-4">
+        <a {% if section.settings.caption_4_link != blank %}href="{{ section.settings.caption_4_link }}"{% endif %} class="shop-feature">
+          {% comment %} <div class="shop-feature-icon"><i class="{{ section.settings.caption_4_icon }}"></i></div> {% endcomment %}
+          <div class="shop-feature-icon">
+	  <img class="lazyload blur-up js-prd-img"
+                         data-src="{{ 'klarna.svg' | asset_url }}"
+                         data-srcset="{{ 'klarna.svg' | asset_url }} 1x"
+                         data-sizes="auto">
+          </div>
+          <div class="shop-feature-text">
+            <div class="text1">{{ section.settings.caption_4_1_text }}</div>
+            <div class="text2">{{ section.settings.caption_4_2_text }}</div>
+          </div>
+          <span class="shop-feature-bg"></span>
+        </a>
+      </div>
+	  <div class="col-md-4">
+        <a {% if section.settings.caption_5_link != blank %}href="{{ section.settings.caption_5_link }}"{% endif %} class="shop-feature">
+          {% comment %} <div class="shop-feature-icon"><i class="{{ section.settings.caption_5_icon }}"></i></div> {% endcomment %}
+          <div class="shop-feature-icon">
+           <img class="lazyload blur-up js-prd-img"
+                         data-src="{{ 'amazon-Pay.png' | asset_img_url: 'x40' }}"
+                         data-srcset="{{ 'amazon-Pay.png' | asset_img_url: 'x40' }} 1x, {{ 'amazon-Pay.png' | asset_img_url: 'x40' , scale: 2 }} 2x"
+                         data-sizes="auto">
+          </div>
+          <div class="shop-feature-text">
+            <div class="text1">{{ section.settings.caption_5_1_text }}</div>
+            <div class="text2">{{ section.settings.caption_5_2_text }}</div>
+          </div>
+          <span class="shop-feature-bg"></span>
+        </a>
+      </div>
+      <div class="col-md-4">
+        <a {% if section.settings.caption_6_link != blank %}href="{{ section.settings.caption_6_link }}"{% endif %} class="shop-feature">
+          {% comment %} <div class="shop-feature-icon"><i class="{{ section.settings.caption_6_icon }}"></i></div> {% endcomment %}
+          <div class="shop-feature-icon">
+           <img class="lazyload blur-up js-prd-img"
+                         data-src="{{ 'colour.png' | asset_img_url: 'x40' }}"
+                         data-srcset="{{ 'colour.png' | asset_img_url: 'x40' }} 1x, {{ 'colour.png' | asset_img_url: 'x40' , scale: 2 }} 2x"
+                         data-sizes="auto">
+          </div>
+          <div class="shop-feature-text">
+            <div class="text1">{{ section.settings.caption_6_1_text }}</div>
+            <div class="text2">{{ section.settings.caption_6_2_text }}</div>
+          </div>
+          <span class="shop-feature-bg"></span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endunless %}
+{% schema %}
+{
+    "name": "Shop info - Style 2",
+    "class": "index-section",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Layout"
+      },
+
+  {
+  "type": "select",
+  "id": "outer_margin",
+  "label": "Outer top margin",
+  "options": [
+    {
+      	"value": "mt-0",
+      	"label": "None"
+    },
+    {
+      	"value": "mt-1",
+      	"label": "10px"
+    },
+    {
+      	"value": "mt-2",
+      	"label": "20px"
+    },
+    {
+      	"value": "mt-3",
+      	"label": "30px"
+    },
+    {
+      	"value": "mt-4",
+      	"label": "40px"
+    },
+    {
+      	"value": "mt-5",
+      	"label": "50px"
+    },
+    {
+      	"value": "mt-6",
+      	"label": "60px"
+    },
+    {
+      	"value": "mt-65",
+      	"label": "65px"
+    },
+    {
+      	"value": "mt-7",
+      	"label": "70px"
+    },
+    {
+      	"value": "mt-8",
+      	"label": "80px"
+    },
+    {
+      	"value": "mt-9",
+      	"label": "90px"
+    },
+    {
+      	"value": "mt-10",
+      	"label": "100px"
+    }
+  ],
+  		"default": "mt-65"
+  	},
+	{
+		"type": "checkbox",
+		"id": "show_under_header",
+		"label": "Show block under the header",
+		"default": false,
+		"info":"usefull when column is enabled"
+	},
+	{
+		"type":"color",
+		"id":"bg",
+		"label":"Section Background Color"
+	},
+    {
+      	"type": "header",
+    	"content": "General"
+    },
+    {
+        "type":"header",
+        "content":"Caption 1"
+    },
+  	{
+  		"type": "url",
+  		"id": "caption_1_link",
+  		"label": "Link"
+  	},
+    {
+        "type": "text",
+        "id": "caption_1_1_text",
+        "label": "Text 1",
+        "default":"Free worlwide delivery"
+    },
+	{
+        "type": "text",
+        "id": "caption_1_2_text",
+        "label": "Text 2",
+        "default":"Lorem ipsum dolor sit amet"
+    },
+    {
+        "type": "text",
+        "id": "caption_1_icon",
+        "label": "icon code",
+        "default": "icon-box3"
+    },
+    {
+        "type":"header",
+        "content":"Caption 2"
+    },
+  	{
+  		"type": "url",
+  		"id": "caption_2_link",
+  		"label": "Link"
+	},
+    {
+        "type": "text",
+        "id": "caption_2_1_text",
+        "label": "Text 1",
+        "default":"100% money back guarantee"
+    },
+	{
+		"type": "text",
+		"id": "caption_2_2_text",
+		"label": "Text 2",
+		"default":"Lorem ipsum dolor sit amet"
+	},
+    {
+        "type": "text",
+        "id": "caption_2_icon",
+        "label": "icon code",
+        "default": "icon-arrow-left-circle"
+    },
+    {
+        "type":"header",
+        "content":"Caption 3"
+    },
+  	{
+  		"type": "url",
+  		"id": "caption_3_link",
+  		"label": "Link"
+	},
+    {
+        "type": "text",
+        "id": "caption_3_1_text",
+        "label": "Text 1",
+        "default":"24/7 customer support"
+    },
+	{
+		"type": "text",
+		"id": "caption_3_2_text",
+		"label": "Text 2",
+		"default":"Lorem ipsum dolor sit amet"
+	}, 
+	{
+  		"type": "text",
+  		"id": "caption_3_icon",
+  		"label": "icon code",
+  		"default": "icon-call"
+	},
+	{
+        "type":"header",
+        "content":"Caption 4"
+    },
+  	{
+  		"type": "url",
+  		"id": "caption_4_link",
+  		"label": "Link"
+  	},
+    {
+        "type": "text",
+        "id": "caption_4_1_text",
+        "label": "Text 1",
+        "default":"24/7 customer support"
+    },
+	{
+		"type": "text",
+		"id": "caption_4_2_text",
+		"label": "Text 2",
+		"default":"Lorem ipsum dolor sit amet"
+	}, 
+	{
+  		"type": "text",
+  		"id": "caption_4_icon",
+  		"label": "icon code",
+  		"default": "icon-call"
+  	},
+	{
+        "type":"header",
+        "content":"Caption 5"
+    },
+  	{
+  		"type": "url",
+  		"id": "caption_5_link",
+  		"label": "Link"
+  	},
+    {
+        "type": "text",
+        "id": "caption_5_1_text",
+        "label": "Text 1",
+        "default":"Breeze through checkout."
+    },
+	{
+		"type": "text",
+		"id": "caption_5_2_text",
+		"label": "Text 2",
+		"default":"Lorem ipsum dolor sit amet"
+	}, 
+	{
+  		"type": "text",
+  		"id": "caption_5_icon",
+  		"label": "icon code",
+  		"default": "icon-call"
+  	},	
+	{
+        "type":"header",
+        "content":"Caption 6"
+    },
+  	{
+  		"type": "url",
+  		"id": "caption_6_link",
+  		"label": "Link"
+  	},
+    {
+        "type": "text",
+        "id": "caption_6_1_text",
+        "label": "Text 1",
+        "default":"Pay in four. Interest free."
+    },
+	{
+		"type": "text",
+		"id": "caption_6_2_text",
+		"label": "Text 2",
+		"default":"Lorem ipsum dolor sit amet"
+	}, 
+	{
+  		"type": "text",
+  		"id": "caption_6_icon",
+  		"label": "icon code",
+  		"default": "icon-call"
+  	}
+ ],
+ "presets": [
+      {
+        "name": "Shop info - Style 2",
+        "category": "Text"
+      }
+    ]
+}
+{% endschema %}

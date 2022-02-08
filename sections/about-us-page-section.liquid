@@ -1,0 +1,124 @@
+<div class="holder  boxed  {{ section.settings.outer_margin }} {% if section.settings.show_under_header %}show_under_header{% endif %}">
+  <div class="container holder-bg-12" {% if section.settings.bg != blank %}style="background-color: {{ section.settings.bg }}"{% endif %}>
+    <div class="row shop-features-style3">
+      <div class="col-md-4 shop-feature">
+            <div class="about-us-shop-head shop-feature-text">
+               <div class="text1">{{ section.settings.caption_1_text }}</div>
+        	</div>
+          <div class="shop-feature-text">
+            <div class="text2 px-md-3">{{ section.settings.caption_1_1_text }}</div>
+
+          </div>
+      
+      
+      
+      </div>
+      <div class="col-md-4 shop-feature">
+          <div class="about-us-shop-head shop-feature-text">
+              <div class="text1">{{ section.settings.caption_2_text }}</div>
+          </div>
+          <div class="shop-feature-text">
+            <div class="text2 px-md-3">{{ section.settings.caption_2_1_text }}</div>
+    
+          </div>
+     
+      
+      </div>
+      <div class="col-md-4 shop-feature">
+          <div class="about-us-shop-head shop-feature-text">
+             <div class="text1">{{ section.settings.caption_3_text }}</div>
+          </div>
+          <div class="shop-feature-text">
+            <div class="text2 px-md-3">{{ section.settings.caption_3_1_text }}</div>
+    
+          </div>
+        
+       
+      </div> 
+
+    </div>
+  </div>
+</div>
+<style>
+.shop-features-style3 .shop-feature .shop-feature-text .text1, .shop-features-style3-1 .shop-feature .shop-feature-text .text1{
+	display: block;
+}
+</style>
+{% schema %}
+{
+  "name": "About Us text",
+   "settings": [
+    {
+        "type": "select",
+        "id": "outer_margin",
+        "label": "Outer top margin",
+        "options":[
+					{"value":"mt-0","label":"None"},
+					{"value":"mt-1","label":"10px"},
+					{"value":"mt-2","label":"20px"},
+					{"value":"mt-3","label":"30px"},
+					{"value":"mt-4","label":"40px"},
+					{"value":"mt-5","label":"50px"},
+					{"value":"mt-6","label":"60px"},
+					{"value":"mt-65","label":"65px"},
+					{"value":"mt-7","label":"70px"},
+					{"value":"mt-8","label":"80px"},
+					{"value":"mt-9","label":"90px"},
+					{"value":"mt-10","label":"100px"}
+				   ]
+	},
+	{
+        "type":"header",
+        "content":"Caption 1"
+    },
+  	
+    {
+        "type": "text",
+        "id": "caption_1_text",
+        "label": "Text Head",
+        "default":"OUR PROMISE"
+    },
+	{
+        "type": "text",
+        "id": "caption_1_1_text",
+        "label": "Sub Text",
+        "default":"Free worlwide delivery"
+    },
+
+    {
+        "type":"header",
+        "content":"Caption 2"
+    },
+  	
+    {
+        "type": "text",
+        "id": "caption_2_text",
+        "label": "Text Head",
+        "default":"OUR PROMISE"
+    },
+	 {
+        "type": "text",
+        "id": "caption_2_1_text",
+        "label": "SubText",
+        "default":"100% money back guarantee"
+    },
+   
+    {
+        "type":"header",
+        "content":"Caption 3"
+    },
+    {
+        "type": "text",
+        "id": "caption_3_text",
+        "label": "Text Head",
+        "default":"ORDERS SHIPPED"
+    },
+	{
+        "type": "text",
+        "id": "caption_3_1_text",
+        "label": "SubText",
+        "default":"24/7 customer support"
+    }
+]
+}
+{% endschema %}

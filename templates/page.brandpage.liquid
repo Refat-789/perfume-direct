@@ -1,0 +1,57 @@
+<div class="page-width">
+  <header class="section-header text-center">
+    <h1 class="section-header__title h2">{{ page.title }}</h1>
+  </header>
+  <style>
+    #listtype
+    {
+      display:inline;
+      position: relative;
+    top: 0;
+    right: 0;
+    width: 100%;
+    text-align: center;
+    padding: 24px 0 32px;
+    }
+    #liststyle
+    {
+      display:inline;
+      margin: 0 8px;
+    }
+    #A
+    {
+      padding-top: 155px;
+    margin: -141px 0 24px;
+    }
+    a{
+      color:black!important;
+          
+	}
+    
+  </style>
+  <div class="grid">
+    <div class="grid__item medium-up--four-fifths medium-up--push-one-tenth">
+      <div class="rte">
+        {{ page.content }}
+                   {%- assign cartItems = 'A,B,C,D,E,F,G,H,I,J' | split: "," -%}
+
+  		<ul id="listtype">
+        {% for item in cartItems %}
+                  <a href= '#{{item}}'><li id="liststyle">{{item}}</li></a>
+
+        {% endfor %}
+        </ul>
+        
+       
+ {% for item in cartItems %}
+        <h3 id={{item}}>{{item}}</h3>
+        {% section 'alphabet' %}
+
+        {% endfor %}
+        
+        
+       
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+{% if template == 'product' and product.vendor != 'wrapin' %}
+	<div id='ptw-wrapin' data-page='product'></div>
+{% endif %}
+{% if template == 'cart' %}
+	<div id='ptw-wrapin' data-page='cart'></div>
+{% endif %}
+<script>
+	var ptwShopName = 'scentdirect.myshopify.com';
+</script>
+
+<style>
+  .ptw-app-label label:before, .ptw-app-label label:after{display: none !important;}
+  .ptw-app-label label{padding-left: 0 !important;}
+  .ptw-add-gift .btn{margin-top: 10px;}
+</style>
+<script>
+  function ptwAfterWrapinLoadHook(){
+    var addGiftbtn = '<div class="ptw-add-gift"><button id="ptw-add-gift-pro" class="btn">Add Gift Box</button></div>';
+    jQuery('.ptw-app-gnote').after(addGiftbtn);
+    jQuery('#ptw-gift-needed').remove();
+    document.getElementById("ptw-add-gift-pro").addEventListener("click", ptwAddGiftPro);
+  }
+  function ptwAddGiftPro(){
+    var variant_id = jQuery('#ptw-variant-id').val();
+    var product_params = {
+      type: 'POST',
+      url: '/cart/add.js',
+      data: { items: [{ quantity: 1, id: variant_id }] },
+      dataType: 'json',
+      cache : false,
+      async: false
+    };
+
+    jQuery.ajax(product_params).done(function(data){
+      console.log('Gift Wrap Added');
+      location.reload();
+    });
+  }
+
+ </script>

@@ -1,0 +1,60 @@
+<div class="holder  {{ section.settings.outer_margin }}">
+<div class="title-wrap text-center">
+            <h2 class="h1-style logo-of-insta-gallery-wid">{{ section.settings.title }}</h2>
+</div>
+<div class="yotpo-shop-gallery-widget-home">
+<div
+
+class="yotpo yotpo-pictures-widget"
+
+data-gallery-id="606dcb351b07c337f749b1ad">
+
+</div>
+</div>
+</div>
+  {% schema %}
+  {
+    "name": "Yotpo Shop Gallery",
+    "class": "index-section",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "enable",
+        "label": "Enable",
+        "default": true
+      },
+	  {
+		"type": "text",
+		"id": "title",
+		"label": "Heading",
+		"default": "SHOP OUR INSTAGRAM"
+	  },
+	  {
+		"type": "select",
+		"id": "outer_margin",
+		"label": "Outer top margin",
+		"options":[
+		{"value":"mt-0","label":"None"},
+		{"value":"mt-1","label":"10px"},
+		{"value":"mt-2","label":"20px"},
+		{"value":"mt-3","label":"30px"},
+		{"value":"mt-4","label":"40px"},
+		{"value":"mt-5","label":"50px"},
+		{"value":"mt-6","label":"60px"},
+		{"value":"mt-65","label":"65px"},
+		{"value":"mt-7","label":"70px"},
+		{"value":"mt-8","label":"80px"},
+		{"value":"mt-9","label":"90px"},
+		{"value":"mt-10","label":"100px"}
+],
+"default": "mt-65"
+}
+	],
+    "presets": [
+      {
+        "name": "Yotpo Shop Gallery",
+        "category": "Yotpo"
+      }
+    ]
+  }
+{% endschema %}

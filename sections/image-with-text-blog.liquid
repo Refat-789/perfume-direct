@@ -1,0 +1,149 @@
+{% assign your_blog_handle_here = 'news' %}
+{% assign how_many_articles_to_show = 1 %}
+{% for article in blogs[your_blog_handle_here].articles limit: how_many_articles_to_show %}
+<div class="holder fullboxed py-3 py-md-7 holder-bg-08 removeallpadding"  {% if section.settings.bg != blank %}style="background-color: {{ section.settings.bg }};"{% endif %}>
+	<div class="container">
+      <div class="title alignment">
+                {% comment %} <h1>{{ blog.title }}</h1> {% endcomment %}
+                <h1 class="blogHeading">{{ "general.theme.blog_archive_title" | t }}</h1>
+                {% if current_tags %}
+                    <h4>{{ current_tags | join: " + " }}</h4>
+                {% endif %}
+            </div>
+       <a href="{{ article.url }}" class="bnr bnr-discount bnr-discount--left noshowmobile">
+			<div class="row">
+				<div class="col-md bnr-discount-image">
+                    
+					{%- assign img_url = article | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+					{%- assign image_alt = article.title | escape -%}
+					<img class="lazyload blur-up" data-src="{{ img_url }}" data-widths="[900, 1200, 1800]"
+						data-aspectratio="{{ article.aspect_ratio }}" data-sizes="auto" alt="{{ image_alt }}">
+		
+				</div>
+              <div class="col-md">
+					<div class="bnr-discount-caption">
+                      	<div class="bnr-discount-text-wrap" style="background-color:#f5f5f5;left: -60px;height: 220px;width: 610px;">
+					      <div class="bnr-text1">{{ article.title }}</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</a>
+		
+	</div>
+</div>
+{% endfor %}
+{% schema %}
+{
+"name": "Banners 2 + text Style 7",
+"class": "index-section",
+"settings": [
+{
+"type": "header",
+"content": "Layout"
+},
+{
+"type": "select",
+"id": "outer_margin",
+"label": "Outer top margin",
+"options":[
+{"value":"mt-0","label":"None"},
+{"value":"mt-1","label":"10px"},
+{"value":"mt-2","label":"20px"},
+{"value":"mt-3","label":"30px"},
+{"value":"mt-4","label":"40px"},
+{"value":"mt-5","label":"50px"},
+{"value":"mt-6","label":"60px"},
+{"value":"mt-65","label":"65px"},
+{"value":"mt-7","label":"70px"},
+{"value":"mt-8","label":"80px"},
+{"value":"mt-9","label":"90px"},
+{"value":"mt-10","label":"100px"}
+],
+"default": "mt-65"
+},
+{
+"type":"color",
+"id":"bg",
+"label":"Background Color"
+},
+{
+"type": "header",
+"content": "Product 1"
+},
+{
+"type": "image_picker",
+"id": "image_1",
+"label": "Image",
+"info":"recommended width 555x460px (like in demo)"
+},
+{
+"type": "url",
+"id": "link_1",
+"label": "Link"
+},{
+"type": "text",
+"id": "caption_0",
+"label": "Topic",
+"default":"Topic"
+},
+{
+"type": "text",
+"id": "caption_1",
+"label": "Caption",
+"default":"Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+},
+{
+"type": "textarea",
+"id": "desc_1",
+"label": "Description",
+"default":"LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING ELIT. UT EROS LACUS.<span class='bnr-text2-brd'></span>"
+},
+{
+"type":"color",
+"id":"bg_1",
+"label":"Background Color",
+"default":"#f7fcff"
+},
+{
+"type": "header",
+"content": "Product 2"
+},
+{
+"type": "image_picker",
+"id": "image_2",
+"label": "Image",
+"info":"recommended width 555x460px (like in demo)"
+},
+{
+"type": "url",
+"id": "link_2",
+"label": "Link"
+},
+{
+"type": "text",
+"id": "caption_2",
+"label": "Caption",
+"default":"limited discounts"
+},
+{
+"type": "textarea",
+"id": "desc_2",
+"label": "Description",
+"default":"for new Lego constructors<span class='bnr-text2-brd'></span>"
+},
+{
+"type":"color",
+"id":"bg_2",
+"label":"Background Color",
+"default":"#f7fcff"
+}
+],
+"presets": [
+{
+"name": "Banners 2 + text Style 7",
+"category": "Banners"
+}
+]
+}
+{% endschema %}

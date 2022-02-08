@@ -1,0 +1,319 @@
+.page-page-valentine .christmas-item-title a {
+    color: #000;
+}
+.page-page-valentine .top-image-of-best-seller {
+    background-image: none !important;
+	height: 0px !important;
+}
+@font-face {
+    font-family: "Festive";
+    src: url("Festive-Regular.ttf") format("truetype");
+}
+img.blur-up.lazyautosizes.lazyloaded {display: block !important;}
+.col-md-12.text-label-cart-page {padding-left: 0;margin-bottom: 20px;padding-right:0;margin-top:5px;}
+.col-md-12.text-label-cart-page label{margin-bottom:10px;}
+.product-page.out-of-stock-message{
+    width: 100%;
+    background: #000000;
+    padding-bottom: 6px;
+    padding-top: 6px;
+    font-size: 14px;
+    color: #ffffff;
+    text-align: center;
+  	text-transform:uppercase;
+  	margin-top:15px;
+}
+#prodpg1 .js-prd-d-holder.prd-holder.hideonPhone {
+    display: block !important;
+}
+.yotpo input{
+	display:inline-block !important;
+}
+.yotpo .form-group .form-element .y-label{
+	white-space:normal !important;
+}
+.mobile-filters-modal .mobile-filters-container .mobile-single-filter .mobile-filter-radio-buttons .mobile-filter-radio-button input[type="radio"]{
+	width:30px !important;
+}
+/**** Media *****/
+@media (max-width: 479px){
+  .small-med-mar-top-vou{margin-top: 20px !important;}
+  .prd-price-rating-wrap{margin-top: 35px !important;}
+}
+/******Yotpo CSS*****/
+.logo-of-insta-gallery-wid{
+	font-size: 20px !important;
+    font-weight: 400 !important;
+    line-height: 1.2 !important;
+}
+.yotpo .promoted-products-box,.yotpo .yotpo-label-container,.yotpo-label.yotpo-small-box {
+    display: none !important;
+}
+.yotpo .yotpo-bottomline .yotpo-icon-star, .yotpo .yotpo-bottomline .yotpo-icon-half-star, .yotpo .yotpo-bottomline .yotpo-icon-empty-star {
+    color: #75939e;
+}
+.yotpo.bottomLine.yotpo-small {
+    height: 30px;
+    padding-top: 3px;
+}
+.main-widget.yotpo-display-wrapper.yotpo-label-border .yotpo-bottomline .yotpo-icon-star,.yotpo.yotpo-main-widget .yotpo-bottomline .yotpo-icon-half-star,.yotpo .yotpo-review .yotpo-header .yotpo-review-stars .yotpo-icon{
+	color:#e4d092;
+}
+span.yotpo-icon.yotpo-icon-empty-star.rating-star.pull-left {
+    margin: 0;
+}
+span.yotpo-icon.yotpo-icon-star.rating-star.pull-left {
+    margin-top: 0;
+}
+.yotpo a.text-m {
+    color: #707070 !important;
+  	font-weight:500;
+ 	margin-left: 5px;
+    padding-top: 1px;
+  	text-transform:uppercase;
+}
+.yotpo a.text-m:hover{
+	color: #000000 !important;
+}
+.page-collection .yotpo-bottomline.pull-left.star-clickable:focus {
+    outline: -webkit-focus-ring-color auto 0px !important;
+}
+.page-collection .yotpo a.text-m {
+    pointer-events: none;
+	cursor:default !important;
+}
+.page-collection .yotpo .standalone-bottomline.star-clickable,.page-collection .yotpo .standalone-bottomline .star-clickable{
+	cursor:default !important;
+}
+.home-page .yotpo-bottomline.pull-left.star-clickable:focus {
+    outline: -webkit-focus-ring-color auto 0px !important;
+}
+.home-page .yotpo a.text-m {
+    pointer-events: none;
+	cursor:default !important;
+}
+.home-page .yotpo .standalone-bottomline.star-clickable,.home-page .yotpo .standalone-bottomline .star-clickable{
+	cursor:default !important;
+}
+.yotpo-mar-home-rev-car{margin-top:30px; margin-bottom:25px;}
+.customul .customlabel{
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 600;
+    height: 16px;
+    line-height: 20px;
+    padding: 0px 4px 0px;
+    color: #000 !important;
+    background-color: #a7d2c7 !important;
+    margin-left: 6px;
+    letter-spacing: 0.2px;
+}
+.person-item,.christmas-item {
+    position: relative;
+}
+.person-item-title{
+    color: #fff;
+    word-spacing: 100vw;
+    font-size: 32px;
+    margin-top: 12px;
+}
+.christmas-item-title{
+    margin-top: 12px;
+}
+.christmas-item-title a{
+	color: #fff;
+    font-size: 32px;
+  	text-decoration:none;
+}
+.person-item .seprator{
+	border: 1px solid #75939e;
+  	margin: 0 75% 0 5px;
+}
+.gift-details .seprator{
+	border: 1px solid #e4d092;
+  	margin: 0 75% 0 5px;
+}
+.member-details,.gift-details {
+    position: absolute;
+    bottom: 20px;
+  	left: 20px;
+    z-index: 2;
+}
+.person-item-post.text-uppercase {
+    font-size: 20px;
+    color: #fff;
+    font-weight: 300;
+    line-height: 1;
+    margin-bottom: 8px;
+}
+.vignette-of-image{
+	position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    box-shadow: inset 20px -20px 70px 0px #000000ad;
+    overflow: hidden;
+    z-index: 1;
+}
+.head-title{
+	font-size: 18px;
+  	font-weight: 600;
+}
+span.badge.prd-label--sale.prd-label--freeshipping {
+    padding: 5px 10px 0;
+    border-radius: initial;
+    display: block;
+    height: auto;
+    margin: 0 0 10px;
+    font-size: 16px;
+    line-height: 30px;
+    vertical-align: middle;
+}
+
+.post-prw .post-title>* {
+    color: black;
+}
+.page-font-up{
+	font-size: 16px;
+  	line-height: 32px;
+  	color: #22222285;
+	text-transform: uppercase;
+}
+.container .shop-features-style3 .about-us-shop-head .text1 {
+    font-weight: 900;
+}
+.text-white{
+	color:#fff;
+}
+.outline-white{
+	border:1px solid #fff;
+}
+.btn.outline-white:active:hover, .btn.outline-white:focus:hover, .btn.outline-white:hover{
+	border: 1px solid #fff;
+}
+.post-title.christmas a{
+	 color: #707070;
+     font-size: 12px;
+  
+}
+.post-title.christmas{
+  	padding:0;
+}
+.post-teaser.christmas{
+	padding:0;
+      text-transform: uppercase;
+}
+.christmas-bottom-inner{
+	padding:20px 20px 48px;
+ 
+}
+.christmas-bottom-center {
+	display:flex;
+  	justify-content:center;
+  	align-items:center;
+}
+.christmas-bottom-center .chri-b-text1 h1{
+	font-family:Festive;
+  	font-size: 58px;
+  	color: #e4d092;
+  margin-bottom:10px;
+  	font-weight:100;
+  	text-transform:none;
+}
+.christmas-bottom-center .chri-b-text2{
+	font-size:18px;
+  	font-weight: 100;
+  	font-family: 'Josefin Sans';
+    line-height: 1.75;
+}
+.title-and-content-c-b h4 {
+    margin-bottom: 0;
+}
+.title-and-content-c-b p {
+    margin-top: 10px;
+  	margin-bottom: 15px;
+}
+.christmas-slider-h1{
+	font-size: 84px;
+  font-family:Festive;
+  font-weight: 100;
+    text-transform: capitalize;
+    margin-bottom: 0;
+    line-height: 1;
+}
+.christmas-slider-p{
+	font-size:20px !important;
+}
+#atharva_minicart_count{
+	font-size:11px !important;
+  	background-color: transparent !important;
+  	color:#00084b !important;
+  	border-radius: 50px !important;
+}
+/*************media***********/
+@media(max-width: 480px){.page-page-valentine .bnslider-image.bg-middle.lazyload.blur-up {filter: blur(2px) !important;;}
+.page-page-valentine .christmas-item-image img.blur-up.lazyautosizes.lazyloaded {    width: 100%;  opacity: 0.5;}
+}
+@media(max-width: 550px){.prd-price{margin-top: 1px !important;display:inline-block !important;}}
+@media(max-width: 600px){
+    	.prd-rating.hideonweb {width: 190px;}
+  	.person-item-post.text-uppercase, .head-title {
+    	font-size: 14px;
+	}
+  	.page-font-up{
+		font-size: 12px; 
+    	line-height: 28px;
+    }
+  	#shopify-section-about-us-meet-team .person-row>[class*=col-] {
+    float: none;
+    margin-top: 16px;
+    padding: 0 8px;
+	}
+  .christmas-bottom-center .chri-b-text1 h1{
+  	font-size:40px;
+  }
+  .christmas-bottom-center .chri-b-text2{
+  	font-size:14px;
+    line-height:2;
+  }
+  #atharva_minicart_count{
+  	color: #000 !important;
+    background: transparent !important;
+    top: -4px !important;
+    right: -1px !important;
+  }
+}
+@media(max-width:992px){
+
+  	.person-item-title,.christmas-item-title a{
+    	font-size: 20px;
+	}
+}
+@media(min-width:768px){
+  .christmas-bottom-inner{
+  	width:65%;
+    padding:20px 40px 48px;
+  }
+  .christmas-slider-h1{
+  	font-family:Festive;
+	font-size:120px;
+  }
+  #atharva_minicart_count {
+  	top: -3px !important;
+	right:-20px !important;
+    
+}
+}
+@media(max-width:1024px){
+  .hide-1024{
+  	display:none!important;
+  }
+    .display-1024{
+  	display:block!important;
+  }
+}
+@media(min-width:992px) and (max-width:1024px){
+.col-auto.logo-holder.middlelogo {
+    left: 0 !important;
+}
+}

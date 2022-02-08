@@ -1,0 +1,43 @@
+{%- assign grid_image_width = '410x' -%}
+{%- assign grid_image_scale = '2' -%}
+
+<div class="prd prd-has-loader">
+    <div class="prd-inside">
+        <div class="prd-img-area">
+            {%- assign aspect_ratio = 1  -%}
+                {% assign _img = article %}
+                {% assign _img_size = grid_image_width %}
+                {% if _img %}
+                    <img class="lazyload blur-up js-prd-img fixsizeimg"
+                         data-src="{{ _img | img_url: _img_size }}"
+                         data-srcset="{{ _img | img_url: _img_size }} 1x, {{ _img | img_url: _img_size, scale: 2 }} 2x"
+                         data-aspectratio="{{ _img.aspect_ratio }}"
+                         data-sizes="auto"
+                         alt="{{ _img.alt | escape }}">
+        	   {%- if  product.images[1] and settings.product_hover_image -%}
+                        {% assign _img2 = product.images[1] %}
+                    <img class="lazyload blur-up js-prd-img"
+                         data-src="{{ _img2 | img_url: _img_size }}"
+                         data-srcset="{{ _img2 | img_url: _img_size }} 1x, {{ _img2 | img_url: _img_size, scale: 2 }} 2x"
+                         data-aspectratio="{{ _img2.aspect_ratio }}"
+                         data-sizes="auto"
+                         alt="{{ _img2.alt | escape }}">
+                {%- endif -%}
+                {%- endif -%}
+                <div class="gdw-loader"></div>
+        </div>
+        <div class="prd-info">
+          <ul class="tags-list post-tags-list" style="margin-top: 32px;margin-bottom: 16px;">
+                                    {% for tag in article.tags %}
+                                    <li>
+                                        <a href="{{ blog.url }}/tagged/{{ tag | handle }}">{{ tag }}</a>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+            <h2 class="prd-title">
+                                    <a href="{{ article.url }}">{{ article.title }}</a>
+                                </h2>
+           
+        </div>
+    </div>
+</div>

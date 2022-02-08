@@ -1,0 +1,26 @@
+<div class="holder py-3 mt-0 subscribe-form-wrap">
+  <div class="container rempad">
+    
+    <div class="klaviyo-subscribe-form">                
+    	<div class="klaviyo-form-RLFcuk"></div>
+    </div>
+    
+    <div class="subscribe-form subscribe-form--style1 d-none newsletter-inline-123">
+      {% form 'customer', id:'footer-subsribe' %}
+        <div class="form-inline singleline_al">
+        {% if form.posted_successfully? %}
+          <p class="form--success">{{ 'general.newsletter_form.confirmation' | t }}</p>
+        {% else %}
+            <div class="subscribe-form-title">{{ settings.newsletter_title }}:</div>
+          	<div class="form-control-wrap style_contact">
+              <input type="email" name="contact[email]"  class="form-control" value="{% if customer %}{{ customer.email }}{% endif %}" placeholder="{{ 'general.theme.enter_email' | t }}"  >
+              {{ form.errors | default_errors }}
+          	</div>
+          	<button type="submit" class="btn style_butn">{{ 'general.theme.subscribe' | t }}</button>
+            {% endif %}
+        </div>
+      {% endform %}      
+    </div>
+    
+  </div>
+</div>

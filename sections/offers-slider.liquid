@@ -1,0 +1,207 @@
+<div class="container-fluid holder-bg-12">
+  <div class="row slideable-row">
+      <div class='slideable-row-container'>
+        <a class='slideable-row-link' href="https://www.perfumedirect.com/pages/valentines-day-shop">
+          <div class='slideable-row-image'>
+            <img width="100%" src="{{ 'hp-val-day-offer.png' | asset_url }}">
+          </div>
+          <div class='slideable-row-text'>
+            <p>FREE SHIPPING CODE FOR VALENTINE'S DAY: VDAY22 </p>
+          </div>
+        </a>
+      </div>
+
+      <div class='slideable-row-container'>
+        <a class='slideable-row-link' href="https://www.perfumedirect.com/products/lacoste-lhomme-eau-de-toilette-mens-aftershave-spray-100ml">
+          <div class='slideable-row-image'>
+            <img width="100%" src="{{ 'hp-offer-lacoste.png' | asset_url }}">
+          </div>
+          <div class='slideable-row-text'>
+            <p>LACOSTE L'HOMME | £27.99</p>
+          </div>
+        </a>
+      </div>
+
+      <div class='slideable-row-container'>
+        <a class='slideable-row-link' href="https://www.perfumedirect.com/pages/student-discount">
+          <div class='slideable-row-image'>
+            <img width="100%" src="{{ 'hp-offer-student.png' | asset_url }}">
+          </div>
+          <div class='slideable-row-text'>
+            <p>SAVE 10% STUDENT DISCOUNT</p>
+          </div>
+        </a>
+      </div>
+
+      <div class='slideable-row-container'>
+        <a class='slideable-row-link' href="https://www.perfumedirect.com/collections/wella">
+          <div class='slideable-row-image'>
+            <img width="100%" src="{{ 'hp-offer-wella.png' | asset_url }}">
+          </div>
+          <div class='slideable-row-text'>
+            <p>New In: Wella</p>
+          </div>
+        </a>
+      </div>
+    
+    <div class='slideable-row-container'>
+        <a class='slideable-row-link' href="https://www.perfumedirect.com/collections/jean-paul-gaultier">
+          <div class='slideable-row-image'>
+            <img width="100%" src="{{ 'hp-jpg-offer.png' | asset_url }}">
+          </div>
+          <div class='slideable-row-text'>
+            <p>SAVE UP TO 26% OFF JPG</p>
+          </div>
+        </a>
+      </div>
+    
+    <div class='slideable-row-container'>
+        <a class='slideable-row-link' href="https://www.perfumedirect.com/collections/milk_shake">
+          <div class='slideable-row-image'>
+            <img width="100%" src="{{ 'milk_shake_offer.png' | asset_url }}">
+          </div>
+          <div class='slideable-row-text'>
+            <p>milk_shake HAIRCARE</p>
+          </div>
+        </a>
+      </div>
+    
+    <div class='slideable-row-container'>
+        <a class='slideable-row-link' href="https://www.perfumedirect.com/collections/clinique-skin-care-for-women">
+          <div class='slideable-row-image'>
+            <img width="100%" src="{{ 'hp-clinique-offer.png' | asset_url }}">
+          </div>
+          <div class='slideable-row-text'>
+            <p>40% Off Selected Clinique</p>
+          </div>
+        </a>
+      </div>
+    
+    <div class='slideable-row-container'>
+        <a class='slideable-row-link' href="https://www.perfumedirect.com/collections/loreal">
+          <div class='slideable-row-image'>
+            <img width="100%" src="{{ 'hp-loreal-offer.png' | asset_url }}">
+          </div>
+          <div class='slideable-row-text'>
+            <p>New IN: L'Oréal Pro</p>
+          </div>
+        </a>
+      </div>
+  </div>
+</div>
+<style>
+  	.slideable-row{
+      	overflow-x: auto;
+      	flex-wrap: unset;
+      	background-color: white;
+	}
+    .slideable-row-container{
+          min-width:275px;
+      }
+  	@media screen and (min-width: 1280px) {
+/*       .slideable-row {
+        justify-content: center;
+
+      } */
+      .slideable-row-container{
+		max-width:100%;
+	}
+    }
+	
+  	.slideable-row::-webkit-scrollbar {    display: none;}
+	.slideable-row-image{
+      height: 115px;
+	}
+    .slideable-row-image img{
+      user-drag: none;
+      -webkit-user-drag: none;
+      user-select: none;
+      -moz-user-select: none;
+      -webkit-user-select: none;
+      -ms-user-select: none;
+    }
+	.slideable-row-text{
+      	text-transform: uppercase;
+		background-color: black;
+		color: white;
+        padding: 7px 12px;
+		font-size: 16px;
+        font-weight: 300;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.4;
+        letter-spacing: normal;
+        text-align: center;
+        color: #fff;
+      	height: 100%;
+	}
+	.slideable-row-link{
+		color: white;
+		text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-items: stretch;
+        height: 100%;
+       
+	}
+  .slideable-row-link:hover .slideable-row-text p{
+    text-decoration: underline !important;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Offer Slider",
+  "class": "index-section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+	{
+      "type": "color",
+      "id": "bg",
+      "label": "Section Background Color for the section (Defaults to white)",
+	  "default": "#fff"
+    },
+	{
+      "type": "header",
+      "content": "General"
+    },
+    {
+      "type": "header",
+      "content": "Caption 1"
+    },
+	{
+      "type": "image_picker",
+      "id": "caption_1_image",
+      "label": "Image"
+    },
+    {
+      "type": "url",
+      "id": "caption_1_link",
+      "label": "Link"
+    },
+    {
+      "type": "text",
+      "id": "caption_1_text",
+      "label": "Text 1",
+      "default": "Buy 4 Mini Travel Fragrances & get the cheapest free"
+    }
+	
+  ],
+  "presets": [
+    {
+      "name": "Offer Slider",
+      "category": "Text"
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

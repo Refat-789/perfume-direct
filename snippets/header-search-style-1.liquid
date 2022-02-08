@@ -1,0 +1,14 @@
+{% if section.settings.header_search %}
+<!-- Header Search Style 1 -->
+<div class="search-holder-inner">
+  <form  action="/search" class="search">
+    <div class="form-inline">
+      <div class="form-control-wrap d-inline-flex w-100">
+        <input type="search" name="q" class="search-input" placeholder="{{ 'general.theme.search_keyword' | t }}" value="{{ search.terms | escape }}">
+        <button type="submit" class="search-button"><i class="icon-search2"></i></button>
+      </div>
+    </div>
+  </form>
+</div>
+<!-- /Header Search  -->
+{% endif %}

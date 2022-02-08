@@ -1,0 +1,154 @@
+{% include 'global_vars' %}
+<!doctype html>
+<!--[if IE 9]> <html class="ie9 no-js" lang="zxx"  itemscope itemtype="http://schema.org/WebPage"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html class="no-js" lang="zxx"  itemscope itemtype="http://schema.org/WebPage"> <!--<![endif]-->
+<script async src="https://cdn.salesfire.co.uk/code/7777abd8-3319-45c7-8af3-b9b28c1baa69.js"></script>
+<head>
+
+<!-- Start WKND tag. Deploy at the beginning of document head. -->
+<script>
+	(function(d) {
+		var e = d.createElement('script');
+		e.src = d.location.protocol + '//tag.wknd.ai/4897/i.js';
+		e.async = true;
+		d.getElementsByTagName("head")[0].appendChild(e);
+	}(document));
+</script>
+<!-- End WKND tag -->
+
+<script async src="https://www.googleoptimize.com/optimize.js?id=OPT-MVWQ7N7"></script>
+    
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MML5PB9');</script>
+<!-- End Google Tag Manager -->
+  <script type="text/javascript">(function e(){var e=document.createElement("script");e.type="text/javascript",e.async=true,e.src="//staticw2.yotpo.com/V88iyFPtVtcsi86A17mvY49nuiyVZw4mQK6jVgOZ/widget.js";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)})();</script>
+     {% include 'head' %}
+    {% capture content_for_header %}{{content_for_header}}{% endcapture %}
+	{% section 'filter-menu-settings' %}
+  
+  {{ '//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/font-awesome.min.css' | stylesheet_tag }}
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-117623781-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-117623781-1');
+</script>
+  <script src="{{ 'atharva_minicart.js' | asset_url }}" defer="defer"></script>
+  <meta property="fb:app_id" content="1284863228353686" />
+  <meta name="facebook-domain-verification" content="tq5a6pdc9zgrnselldiu47vf6xcx1p" />
+  
+  
+	<!-- Schema code added by TIDAL -->
+  
+<script type="application/ld+json">
+    
+{
+"@context": "https://schema.org",
+"@type": "Organization",
+"name": "Perfume Direct",
+"url": "https://www.perfumedirect.com",
+"description": "Perfume Direct is the UK's premier online fragrance & beauty store. Stocking a range of specially selected perfumes, aftershaves & gift sets from luxury brands such as Hugo Boss, Gucci, Armani, Paco Rabanne, Calvin Klein, DKNY, Jimmy Choo & many more.",
+"logo": "https://cdn.shopify.com/s/files/1/1442/8846/files/logo-retina_296x.png?v=1596592506",
+"image": "https://cdn.shopify.com/s/files/1/1442/8846/files/logo-retina_296x.png?v=1596592506",
+"sameAs": ["https://www.facebook.com/perfumedirectuk/","https://www.instagram.com/perfumedirect_/","https://twitter.com/perfumedirect_/","https://www.pinterest.co.uk/PerfumeDirectUK/"],
+"address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Unit B2, Axis Point, Heywood",
+            "addressLocality": "United Kingdom",
+            
+            "postalCode": "OL10 2RQ",
+            "addressCountry": "United Kingdom"
+        },
+        "telephone": "+44 330 900 2200"
+    }
+
+</script>
+  
+  <!-- End Schema -->
+
+<!--openpaywidgetstart-->{%- assign current_variant = product.selected_or_first_available_variant -%}
+        
+        <!--openpaywidgetend-->{% render 'laybuy', product: product %}
+ 	<link rel="shortcut icon" href="{{ 'favicon.png' | asset_url }}" type="image/png" />
+
+                  {% include 'bss-product-labels-configs' %}
+                    {% include "ot-cookies" %}</head>
+             
+<body class="{{ color_mode }} page-{{ template | handle }} {% if settings.equal_height %}equal-height{% endif %}{% if settings.zoom_off %} zoom-off{% endif %} {% unless settings.prd_uppercase %}prd-noupper{% endunless %} {% unless settings.headings_uppercase %}h-noupper{% endunless %} {% if settings.slides_mode %}slides-mode{% endif %} {% if home and slides_mode %}fullwidth fullpage-layout{% else %}boxed{% endif %} {% if home %}home-page{% endif %}   {% if column %}left-column{% endif %} is-dropdn-click   {% if settings.ajax_cart %}ajax_cart{% endif %} {% if settings.rtl or template contains 'rtl' %}rtl{% endif %} {% if settings.rounded %}rounded{% endif %} {% if settings.megamenu_spy_navigation %}has-spymenu{% endif %} {% if settings.checkout_popup %}checkout-popup{% endif %} {{ settings.loader }} {% if tools %}hide-until-loaded{% endif %} {% if demo %}demo{% endif %} {% if settings.agreement_checkout_yes %}has-checkout-checkbox{% endif %}">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MML5PB9"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+{% section 'header' %}
+<div {% if home and slides_mode %}id="fullpage"{% endif %} class="page-content">
+   {%comment%}
+  {% include 'breadcrumbs' %}
+   {%endcomment%}
+    {% include 'body-loader' %}
+    {% if column and slides_mode != true %}
+      <div class="container">
+        <div class="row">
+          <div class="col-md-9 aside centerColumn">
+              {{content_for_layout}}
+          </div>
+          <div class="col-md-3 aside mt-3 mt-md-0 sideColumn {{ column_side }}">
+              {% section 'column-vertical-navigation' %}
+              {% section 'column' %}
+          </div>
+        </div>
+      </div>
+    {% else %}
+        {% if home and slides_mode %}
+            {{content_for_layout }}
+        {% else %}
+            {{content_for_layout }}
+        {% endif %}
+    {% endif %}
+</div>
+{% section 'footer' %}
+{% section 'promo-products' %}
+{% include 'before_body_end' %}
+{% include 'smile-initializer' %}
+<script async type="text/javascript" src="https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=J7cXQW"></script>
+{% render 'ps-announcement-popup' %}
+{% render 'ps-footer-payment-icons' %}
+<!----- YOU MUST INCLUDE THIS STATMENT WHEN USING A NEW THEME OR CRITEO TAGS WILL BREAK ---------->
+{% include 'criteo-tracking' %}
+<!----- YOU MUST INCLUDE THIS STATMENT WHEN USING A NEW THEME OR CRITEO TAGS WILL BREAK ---------->
+{% render 'spurit_po2_theme_snippet' %}
+{% if content_for_header contains 'product_label' %}{% include 'bss-product-label-js' %}{% endif %}</body>
+</html>
+
+<!-- Begin Shopify-Clearpay JavaScript Snippet (v1.0.8) -->
+{% if cart.currency.iso_code == shop.currency %}
+<script type="text/javascript">
+// Overrides:
+// var clearpay_min = 0.04;            // As per your Clearpay contract.
+// var clearpay_max = 800.00;          // As per your Clearpay contract.
+// var clearpay_logo_theme = 'colour'; // Can be 'colour', 'black' or 'white'.
+var clearpay_product_selector = '#product-price-selector';
+// var clearpay_cart_integration_enabled = true;
+// var clearpay_cart_static_selector = '#cart-subtotal-selector';
+
+// Non-editable fields:
+var clearpay_shop_currency = {{ shop.currency | json }};
+var clearpay_cart_currency = {{ cart.currency.iso_code | json }};
+var clearpay_shop_money_format = {{ shop.money_format | json }};
+var clearpay_shop_permanent_domain = {{ shop.permanent_domain | json }};
+var clearpay_theme_name = {{ theme.name | json }};
+var clearpay_product = {{ product | json }};
+var clearpay_current_variant = {{ product.selected_or_first_available_variant | json }};
+var clearpay_cart_total_price = {{ cart.total_price | json }};
+var clearpay_js_snippet_version = '1.0.8';
+</script>
+<script type="text/javascript" src="https://static.afterpay.com/shopify-clearpay-javascript.js"></script>
+{% else %}
+<!-- Clearpay disabled: {{ cart.currency.iso_code }} != {{ shop.currency }} -->
+{% endif %}
+<!-- End Shopify-Clearpay JavaScript Snippet (v1.0.8) -->

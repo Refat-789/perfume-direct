@@ -1,0 +1,82 @@
+<div>
+  
+<style type="text/css">
+
+#partPayCalculatorWidget{
+text-align: left;
+width: 100% !important;
+background: #F8F8F8 !important;
+padding-left: 50px !important;
+padding-right: 40px !important;
+padding-top: 20px !important;
+padding-bottom: 20px !important;  
+margin: 0px !important;
+margin-top: 20px !important;
+color: #696969 !important;
+font-size: 12px !important;
+font-family: Verdana !important;
+}
+
+#partPayCalculatorWidgetLogo{
+width: 5% !important;
+height: 5% !important;
+padding-right: 40px !important;
+}
+
+#partPayCalculatorWidget br{
+display: none !important;
+}
+
+#partPayCalculatorWidgetTextFromCopy {
+padding-left: 0px !important;
+}
+
+#partPayCalculatorWidget::after {
+clear:both;
+}
+
+#partPayCalculatorWidgetLogo::after {
+clear:both;
+}
+
+#partPayCalculatorWidgetTextFromCopy::after {
+clear:both;
+}
+
+@media screen and (max-width: 450px)
+  {
+    #partPayCalculatorWidget{
+    text-align: middle;
+    width: 100% !important;
+    background: #F8F8F8 !important;
+    padding-left: 50px !important;
+    padding-top: 20px !important;
+    padding-right: 20px !important;
+    padding-bottom: 30px !important;  
+	color: #696969 !important;
+	font-size: 12px !important;
+	font-family: Verdana !important;
+    }
+    
+	#partPayCalculatorWidgetLogo{
+	width: 3px !important;
+	height: 5px !important;
+	}    
+
+    #partPayCalculatorWidgetLogo{
+    width: 10% !important;
+    height: 10% !important;
+    float: right !important;
+    padding-left: 40px !important; 
+    padding-right: 20px !important; 
+    padding-bottom: 15px !important; 
+    padding-top: 5px !important;
+    }  
+   }
+
+</style>
+
+{%- assign current_variant = product.selected_or_first_available_variant -%}
+<script async src="https://widgets.partpay.co.nz/zip-widget-classic-v3.0.0.js?type=calculator&min=0&max=1000&amount={{ current_variant.price | divided_by: 100.0 }}&locale=uk"></script>
+
+</div>
